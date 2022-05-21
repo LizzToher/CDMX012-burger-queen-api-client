@@ -1,9 +1,10 @@
+import React from 'react';
 import './App.css';
 
 function App() {
-  /* return (
-    <></>
-  ); */
+  return (
+    <p>hola mundo </p>
+  );
 }
 
 export default App;
