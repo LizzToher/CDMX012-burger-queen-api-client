@@ -1,10 +1,14 @@
 import React from 'react';
-import './App.css';
+import Views from './Views';
 
-function App() {
+
+const App = () => {
   return (
-    <p>hola mundo </p>
+    <>
+    <Views />
+    <div>App</div>
+    </>
   );
-}
+};
 
 export default App;
