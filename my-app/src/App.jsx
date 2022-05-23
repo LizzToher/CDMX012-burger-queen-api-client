@@ -1,9 +1,13 @@
-import './App.css';
+import React from 'react';
+import Views from './Views';
 
-function App() {
-  /* return (
-    <></>
-  ); */
-}
+
+const App = () => {
+  return (
+    <>
+    <Views />
+    </>
+  );
+};
 
 export default App;
