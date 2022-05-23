@@ -6,7 +6,6 @@ const App = () => {
   return (
     <>
     <Views />
-    <div>App</div>
     </>
   );
 };

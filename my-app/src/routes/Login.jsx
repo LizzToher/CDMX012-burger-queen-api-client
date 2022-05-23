@@ -2,6 +2,9 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/UserProvider';
 import { useForm } from 'react-hook-form';
+import styles from './Login.module.css';
+import burger from '../assets/burger.png';
+import logo_large from '../assets/logo_large.png';
 
 const Login = () => {
   const { login } = useAuth();
@@ -38,9 +41,14 @@ const Login = () => {
 
   return (
     <>
-    <h1>inicia sesión</h1>
-    <form onSubmit={handleSubmit(onSubmitLogin)}>
-    <input type='email' className='email' placeholder='correo electrónico'
+    <div className={styles.container}>
+    <section>
+    <img className={styles.burgerlogo}alt='backgroundimg' src={burger}></img>
+    </section>
+   <section className={styles.formLogoContainer}>
+    <img className={styles.queenLogo}alt='backgroundimg' src={logo_large}></img>
+    <form className={styles.formLogin} onSubmit={handleSubmit(onSubmitLogin)}>
+    <input type='email' className={styles.input} placeholder='correo electrónico'
         {...register('email', {
             required: {
               value: true,
@@ -53,7 +61,7 @@ const Login = () => {
           })}
             />
              {errors.email && <p>{errors.email.message}</p>}
-             <input type="password" placeholder='Ingrese Contraseña'
+             <input type='password' className={styles.input} placeholder='Ingrese Contraseña'
                 {...register('password', {
                   required : {
                   setValueAs: (v) => v.trim(),
@@ -73,9 +81,10 @@ const Login = () => {
                     })}
                 />
                 {errors.password && <p>{errors.password.message}</p>}
-     <button className="loginButton" type='submit'>Iniciar Sesión</button>
-
+     <button className={styles.loginbtn} type='submit'>Iniciar Sesión</button>
     </form>
+    </section>
+    </div>
     </>
   );
 };
