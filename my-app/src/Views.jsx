@@ -10,6 +10,7 @@ const Views = () => {
   return(
     <>
     {/* <Navbar /> */}
+
     <Routes>
       <Route path='/' element={<Login />} />
       
@@ -23,5 +24,5 @@ const Views = () => {
     </>
   );
 };
-
+ 
 export default Views;
