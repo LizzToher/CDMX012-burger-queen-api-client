@@ -10,7 +10,6 @@ export const useAuth = () => {
     return context;
   };
 
-
 //children es el resto de los componentes, esto es para que se sigan mostrando los componentes
 const UserProvider = ({ children }) => {
     const [user, setUser] = useState(false);
