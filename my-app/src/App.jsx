@@ -1,6 +1,5 @@
 import React from 'react';
-import Views from './Views';
-
+import Views from '../src/routes/Views';
 
 const App = () => {
   return (

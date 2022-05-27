@@ -1,22 +1,38 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/UserProvider';
+import React, {useContext} from 'react';
+// import { useNavigate } from 'react-router-dom';
+import { useAuth, UserContext } from '../context/UserProvider';
 import { useForm } from 'react-hook-form';
 import styles from './Login.module.css';
 import burger from '../assets/burger.png';
 import logo_large from '../assets/logo_large.png';
+// import Home from './Home';
+// import { auth } from '../firebase/firebase';
+
+// import WaiterView from '../components/WaiterView';
+// import WaiterView from '../components/WaiterView';
 
 const Login = () => {
   const { login } = useAuth();
-  // const {user} = useContext(UserContext);
-  const navigate = useNavigate();
+  const { userRol } = useContext(UserContext);
+  // const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors }, setError } = useForm();
-
-  const onSubmitLogin = async ({email, password}) => {
-    try {
+  
+  // const { user } = useContext(UserContext);
+  
+  // let userRole = null;
+  // if (user?.rol) {
+    //   userRole = user.rol;
+    //   console.log(userRole);
+    // }
+    
+    const onSubmitLogin = async ({email, password}) => {
+      // const user= auth.currentUser;   
+      try {
+      // const user = user.uid;
       await login(email, password);
-      navigate('/home');
+    //  navigate('Home');
       console.log('usuario registrado', email, password);
+      console.log(userRol);
 
     } catch (error) {
       switch (error.code) {
@@ -82,6 +98,7 @@ const Login = () => {
                 />
                 {errors.password && <p>{errors.password.message}</p>}
      <button className={styles.loginbtn} type='submit'>Iniciar Sesión</button>
+     {/* {user.rol === 'admin'  ? <Home /> : <WaiterView />} */}
     </form>
     </section>
     </div>
