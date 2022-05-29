@@ -1,12 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext} from 'react';
 import logoSmall from '../assets/logo-nav_small.png';
 import styles from './AdminView.module.css';
 import { collection, query, onSnapshot } from 'firebase/firestore';
 import { db, auth } from '../firebase/firebase';
+import { useNavigate } from 'react-router-dom';
+import { ADMIN } from '../common/constants';
+import { UserContext } from '../context/UserProvider';
 
 const AdminView = () => {
 
     const [users, setUsers] = useState([]);
+    const navigate = useNavigate();
+    const { userRol, setUserRol, logout } = useContext(UserContext);
+    useEffect(() => {
+  
+  if(!userRol || userRol.doc.rol !== ADMIN){
+    navigate('/');
+    setUserRol(null);
+  }
+    }, []);
     
     useEffect(() => {
         const user = auth.currentUser;
@@ -29,6 +41,12 @@ const AdminView = () => {
         }
       }, []);
 
+      const handleLogOut = async (e) => {
+        e.preventDefault();
+        await logout();
+        navigate('/');
+      };
+
   return (
     // <div className={styles.mainContainer}>
    <>
@@ -38,6 +56,7 @@ const AdminView = () => {
     <section className={styles.buttonContainer}>
         <button className={styles.button}>Trabajadores</button>
         <button className={styles.button}>Productos</button>
+        <button className={styles.button} alt='logout' onClick={handleLogOut}>CS</button>
     </section>
     </section>
  </div>
