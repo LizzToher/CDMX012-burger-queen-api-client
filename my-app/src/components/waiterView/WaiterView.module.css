@@ -1,0 +1,94 @@
+body{
+    background-color: #FFA726;
+}
+
+.container {
+    display: flex;
+    flex-direction:row;
+    width: 100%;
+    height: 150px;
+    background: #FFA726;
+}
+
+.logosmall {
+    width: 10%;
+    height: 80%;
+    margin-left: 5%;
+    margin-top: 1%;
+    margin-right: 4%;
+}
+
+.buttonContainer {
+    width: 100%;
+    margin-top: 4%;
+    margin-left: 30%;
+}
+
+.button {
+    background-color: transparent;
+    border: transparent;
+    font-weight: bold;
+    font-size: 40px;
+    cursor: pointer;
+    margin-left: 30%;
+    
+}
+.button:hover {
+    background-color: #FF5B80;
+    border-radius: 15px;
+  }
+
+/* Split the screen in half */
+.split {
+  margin-top: 3%;
+  height: 75%;
+  width: 48%;
+  position: fixed;
+  z-index: 1;
+  top: 14.5%;
+  overflow-x: hidden;
+  padding-top: 3px;
+
+}
+  
+  /* Control the left side */
+  .left {
+    left: 0;
+    background-color: red;
+  }
+  
+  /* Control the right side */
+  .right {
+    right: 0;
+    background-color: #FFD95B;
+  }
+  
+  /* If you want the content centered horizontally and vertically */
+  .centered {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .leftContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+  }
+
+  .buttonMenu{
+    background-color: transparent;
+    border: transparent;
+    font-weight: bold;
+    font-size: 40px;
+    cursor: pointer;
+    margin: auto;
+    margin-left: -4%;
+    align-items: stretch;
+  }
+  .buttonMenu:hover {
+    background-color: #FF5B80;
+    border-radius: 15px;
+  }
