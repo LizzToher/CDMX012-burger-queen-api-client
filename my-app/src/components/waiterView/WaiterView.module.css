@@ -40,19 +40,21 @@ body{
 
 /* Split the screen in half */
 .split {
-    height: 80%;
-    width: 48%;
-    position: fixed;
-    z-index: 1;
-    top: 14.5%;
-    overflow-x: hidden;
-    padding-top: 3px;
-  }
+  margin-top: 3%;
+  height: 75%;
+  width: 48%;
+  position: fixed;
+  z-index: 1;
+  top: 14.5%;
+  overflow-x: hidden;
+  padding-top: 3px;
+
+}
   
   /* Control the left side */
   .left {
     left: 0;
-    background-color: #FFD95B;
+    background-color: red;
   }
   
   /* Control the right side */
@@ -70,3 +72,23 @@ body{
     text-align: center;
   }
   
+  .leftContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+  }
+
+  .buttonMenu{
+    background-color: transparent;
+    border: transparent;
+    font-weight: bold;
+    font-size: 40px;
+    cursor: pointer;
+    margin: auto;
+    margin-left: -4%;
+    align-items: stretch;
+  }
+  .buttonMenu:hover {
+    background-color: #FF5B80;
+    border-radius: 15px;
+  }
