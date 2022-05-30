@@ -1,61 +1,55 @@
-import React, { useState, useEffect } from 'react';
-import logoSmall from '../assets/logo-nav_small.png';
-import styles from './Home.module.css';
-import { collection, query, onSnapshot } from 'firebase/firestore';
-import { db, auth } from '../firebase/firebase';
+import {useContext, useEffect} from 'react';
+// import AdminView from '../components/AdminView';
+// import WaiterView from '../components/WaiterView';
+// import AdminView from '../components/AdminView';
+// import WaiterView from '../components/WaiterView';
+import { UserContext } from '../context/UserProvider';
+import { useNavigate } from 'react-router-dom';
+import { WAITER } from '../common/constants';
+// import Login from './Login';
 
-const AdminView = () => {
-
-    const [users, setUsers] = useState([]);
-    
-    useEffect(() => {
-        const user = auth.currentUser;
-        if(user){
-        const data = query(collection(db, 'users'));
-        console.log(data);
-        let usersArray = [];
-        onSnapshot(data, (querySnapshot) => {
-          querySnapshot.docs.map(doc => {
-            usersArray.push(
-              {
-                id: doc.id,
-                data: doc.data()
-              }
-            );
-          });
-          setUsers(usersArray);
-          console.log(usersArray);
-        });
+const Home = () => {
+    // console.log('desde home', userRol);
+    // const { user } = useAuth();
+    const validateUser = () => {
+        if(userRol.doc.rol === 'admin'){
+            navigate('/AdminView');
         }
-      }, []);
-
-  return (
-    // <div className={styles.mainContainer}>
-   <>
- <div className={styles.container}>
-    <section className={styles.container}>
-        <img className={styles.logosmall} src={logoSmall} alt="small logo" />
-    <section className={styles.buttonContainer}>
-        <button className={styles.button}>Trabajadores</button>
-        <button className={styles.button}>Productos</button>
-    </section>
-    </section>
- </div>
-     {
-         users.map(user => (
-         <section  className={styles.table} key={user.id}>
-           
-        <table className={styles.cell}>
-          <h2>{user.data.name} {user.data.lastname} {user.data.rol}</h2>
-        </table>
-      </section>
-    ))
+        if(userRol.doc.rol === WAITER ){
+            navigate('/WaiterView');
+        }
+        if(!userRol || !userRol.doc.rol){
+            navigate('/');
+        }
     };
-   </>
+    
+    const navigate = useNavigate();
+    const { userRol  } = useContext(UserContext);
+    useEffect(() => {
+        validateUser();
+    }, []);
+    
+    return ('');
+//   return (
+//       validateUser()
+//     <div>
+//       Home
+//       {/* <AdminView /> */}
+//       {/* <WaiterView />
+//       {userRol == 'admin' && navigate('/AdminView')} 
+//       {userRol == 'waiter' && navigate('/WaiterView')}  */}
+//       {/* {userRol === 'admin' ? <AdminView /> : <Login />}
+//       {userRol === 'waiter' ? <WaiterView /> : <Login />} */} 
+      
 
-//   </div>
-  );
+//     </div>
+      
+//   );
 };
 
+<<<<<<< HEAD
 export default AdminView;
 
+=======
+export default Home;
+>>>>>>> cac4f11817205d7bbcc4489072814a78aeea09f6
