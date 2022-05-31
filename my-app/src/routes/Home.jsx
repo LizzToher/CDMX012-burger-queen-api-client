@@ -26,9 +26,4 @@ const Home = () => {
     return ('');
 };
 
-<<<<<<< HEAD
-export default AdminView;
-
-=======
 export default Home;
->>>>>>> cac4f11817205d7bbcc4489072814a78aeea09f6

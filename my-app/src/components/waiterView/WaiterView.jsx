@@ -60,12 +60,12 @@ const WaiterView = () => {
 
             <section className={styles.leftButtonContainer}>
             <button className={styles.buttonMenu}
-               onClick={() => setCategory(products.category)}
+               onClick={() => setCategory('desayuno')}
               type='submit'>
               Desayunos
             </button>
           
-            <button className={styles.buttonMenu} onClick={() => setCategory(products.category)}>
+            <button className={styles.buttonMenu} onClick={() => setCategory('almuerzo')}>
               Almuerzos
             </button>
             </section>
@@ -81,7 +81,10 @@ const WaiterView = () => {
         </thead>
         <tbody>
             {
-              products.map((product) =>{ 
+              products.filter((p) => {
+                if (category === 'desayuno') return p.category === 'desayuno';
+                if (category === 'almuerzo') return p.category === 'almuerzo';
+              }).map((product) =>{ 
                 return (
                     <tr key={product.id} >
                       {console.log(product.id)}
@@ -91,7 +94,7 @@ const WaiterView = () => {
                     </tr>
                 );
               })
-            };
+            }
             {/* {category === products.category && } */}
         </tbody>
         </table>
