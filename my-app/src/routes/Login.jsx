@@ -16,11 +16,9 @@ const Login = () => {
   const onSubmitLogin = async ({ email, password }) => { 
     try {
       await login(email, password);
-      // {userRol == 'admin' && navigate('/AdminView')};
       console.log('usuario registrado', email, password);
       console.log('user rol desde login', userRol.doc.rol);
       navigate('/Home');
-      // <Views />;
 
     } catch (error) {
       switch (error.code) {
@@ -85,7 +83,6 @@ const Login = () => {
               })}
             />
             {errors.password && <p>{errors.password.message}</p>}
-            {/* {userRol == 'admin' && navigate('/AdminView')}; */}
             <button className={styles.loginbtn} type='submit'>Iniciar Sesión</button>
           </form>
         </section>

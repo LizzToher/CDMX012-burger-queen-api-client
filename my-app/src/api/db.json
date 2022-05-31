@@ -1,0 +1,76 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "product": "café americano",
+            "price": 5,
+            "category": "desayuno"
+        },
+        {
+            "id": 2,
+            "product": "café con leche",
+            "price": 7,
+            "category": "desayuno"
+        },
+        {
+            "id": 3,
+            "product": "sandwich de jamón y queso ",
+            "price": 10,
+            "category": "desayuno"
+        },
+        {
+            "id": 4,
+            "product": "jugo de frutas natural",
+            "price": 7,
+            "category": "desayuno"
+        },
+        {
+            "id": 5,
+            "product": "Hamburguesa simple",
+            "price": 10,
+            "category": "almuerzo"
+        },
+        {
+            "id": 6,
+            "product": "Hamburguesa doble",
+            "price": 15,
+            "category": "almuerzo"
+        },
+        {
+            "id": 7,
+            "product": "Papas fritas",
+            "price": 5,
+            "category": "almuerzo"
+        },
+        {
+            "id": 8,
+            "product": "Aros de cebolla",
+            "price": 5,
+            "category": "almuerzo"
+        },
+        {
+            "id": 9,
+            "product": "Agua 500 ML",
+            "price": 5,
+            "category": "almuerzo"
+        },
+        {
+            "id": 10,
+            "product": "Agua 750 ML",
+            "price": 7,
+            "category": "almuerzo"
+        },
+        {
+            "id": 11,
+            "product": "Bebida/Gaseosa 500 ML",
+            "price": 7,
+            "category": "almuerzo"
+        },
+        {
+            "id": 12,
+            "product": "Bebida/Gaseosa 750 ML",
+            "price": 10,
+            "category": "almuerzo"
+        }
+    ]
+}
