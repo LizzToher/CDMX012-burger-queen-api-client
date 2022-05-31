@@ -9,6 +9,7 @@ import logoSmall from '../../assets/logo-nav_small.png';
 
 const WaiterView = () => {
   const [category, setCategory] = useState('desayuno');
+  const [order, setOrder] = useState([]);
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
   let api = helpHttp();
@@ -37,6 +38,11 @@ const WaiterView = () => {
     await logout();
     setUserRol(null);
     navigate('/');
+  };
+
+  const handleOnClick = (product) => {
+    setOrder(product);
+    console.log(order);
   };
 
  
@@ -78,7 +84,7 @@ const WaiterView = () => {
                 if (category === 'almuerzo') return p.category === 'almuerzo';
               }).map((product) =>{ 
                 return (
-                    <section key={product.id} className={styles.menuContainer} >
+                    <section key={product.id} className={styles.menuContainer} onClick={handleOnClick}>
                       {console.log(product.id)}
                       <h2>{product.product}</h2>
                       <h3>${product.price}</h3>
