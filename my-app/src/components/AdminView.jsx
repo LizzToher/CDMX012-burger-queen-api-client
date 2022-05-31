@@ -12,14 +12,13 @@ const AdminView = () => {
     const [users, setUsers] = useState([]);
     const navigate = useNavigate();
     const { userRol, setUserRol, logout } = useContext(UserContext);
-    useEffect(() => {
-  
-  if(!userRol || userRol.doc.rol !== ADMIN){
-    navigate('/');
-    setUserRol(null);
-  }
-    }, []);
-    
+  useEffect(() => {
+    if (!userRol || userRol.doc.rol !== ADMIN) {
+      navigate('/');
+      setUserRol(null);
+    }
+  }, []);
+
     useEffect(() => {
         const user = auth.currentUser;
         if(user){
@@ -44,6 +43,7 @@ const AdminView = () => {
       const handleLogOut = async (e) => {
         e.preventDefault();
         await logout();
+        setUserRol(null);
         navigate('/');
       };
 
