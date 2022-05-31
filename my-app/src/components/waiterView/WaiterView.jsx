@@ -9,7 +9,6 @@ import logoSmall from '../../assets/logo-nav_small.png';
 
 const WaiterView = () => {
   const [category, setCategory] = useState('desayuno');
-  console.log(category);
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
   let api = helpHttp();
@@ -71,33 +70,22 @@ const WaiterView = () => {
             </section>
 
       <section className={styles.tableContainer}>
-            <table>
-        <thead>
-          <tr>
-            <th>Producto</th>
-            <th>Precio</th>
-            <th>Categoría</th>
-          </tr>
-        </thead>
-        <tbody>
+            
+      
             {
               products.filter((p) => {
                 if (category === 'desayuno') return p.category === 'desayuno';
                 if (category === 'almuerzo') return p.category === 'almuerzo';
               }).map((product) =>{ 
                 return (
-                    <tr key={product.id} >
+                    <section key={product.id} className={styles.menuContainer} >
                       {console.log(product.id)}
-                      <td>{product.product}</td>
-                      <td>{product.price}</td>
-                      <td>{product.category}</td>
-                    </tr>
+                      <h2>{product.product}</h2>
+                      <h3>${product.price}</h3>
+                    </section>
                 );
               })
             }
-            {/* {category === products.category && } */}
-        </tbody>
-        </table>
         </section>
   
    </section>
