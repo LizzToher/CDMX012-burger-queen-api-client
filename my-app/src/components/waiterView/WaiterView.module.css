@@ -1,134 +1,142 @@
-body{
-    background-color: #FFA726;
-    /* background: url('../../assets/background.png'); */
+body {
+  background-color: #FFA726;
 }
 
-
 .container {
-    display: flex;
-    flex-direction:row;
-    width: 100%;
-    height: 150px;
-    background: #FFA726;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 150px;
+  background: #FFA726;
 }
 
 .logosmall {
-    width: 10%;
-    height: 80%;
-    margin-left: 5%;
-    margin-top: 1%;
-    margin-right: 4%;
+  width: 10%;
+  height: 80%;
+  margin: 1% 4% 0 5%;
 }
 
 .buttonContainer {
-    width: 100%;
-    margin-top: 4%;
-    margin-left: 30%;
+  width: 100%;
+  position: relative;
+  top: 4rem;
+  left: 25%;
 }
 
 .button {
-    background-color: transparent;
-    border: transparent;
-    font-weight: bold;
-    font-size: 40px;
-    cursor: pointer;
-    margin-left: 30%;
-    
+  background-color: transparent;
+  border: transparent;
+  font-weight: bold;
+  font-size: 40px;
+  cursor: pointer;
+  position: relative;
+  left: 25%;
 }
+
+.buttonLogout {
+  background-color: transparent;
+  border: transparent;
+  font-weight: bold;
+  font-size: 40px;
+  cursor: pointer;
+  position: relative;
+  left: 45%;
+}
+
 .button:hover {
-    background-color: #FF5B80;
-    border-radius: 15px;
-  }
+  background-color: #FF5B80;
+  border-radius: 15px;
+}
+
+.buttonLogout:hover {
+  background-color: #FF5B80;
+  border-radius: 15px;
+}
 
 /* Split the screen in half */
 .split {
   display: flex;
-
 }
-  
-  /* Control the left side */
-  .left {
-  
-    /*background-color: red;*/
-    flex:1;
-    border: 2px solid yellow;
-  }
-  
-  /* Control the right side */
-  .right {
-    /* right: 0; */
-    background-color: #FFD95B;
-    flex:1;
-    border: 2px solid yellow;
-  }
-  
-  .left:first-child{
-    margin-right: 20px;
-   }
-  /* If you want the content centered horizontally and vertically */
-   .centered {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    height: 800px;
-    /* align-items: flex-start; */
-    /* justify-content: center; */
-    /* text-align: center;  */
-   }
-   
-  /* .leftContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
 
-    /* align-items: center; */
-  /* } */  
+/* Control the left side */
+.left {
+  flex: 1;
+}
 
-  .leftButtonContainer{
-    margin-top: 10%;
-    margin-bottom: 10%;
-    /* margin-left: 2%; */
-    /* justify-content: space-around; */
-   /* display: inline-block; */
-   
-   /* margin-left: 2%; */
-  } 
+/* Control the right side */
+.right {
+  background-color: #FFD95B;
+  flex: 1;
+}
 
-  .buttonMenu{
-    background-color: transparent;
-    border: transparent;
-    font-weight: bold;
-    font-size: 37px;
-    cursor: pointer;
-    margin-left: 13%;
-  }
-  .buttonMenu:hover {
-    background-color: #FF5B80;
-    padding: 1%;
-    border-radius: 15px;
-  }
+.left:first-child {
+  margin-right: 20px;
+}
 
-  .tableContainer{
-    text-align: left;
-    
-    /*width: 55%;
-    align-items: flex-start;
-    margin-left: 23%;*/
-    
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    padding: 2%;
-   } 
+/* If you want the content centered horizontally and vertically */
+.centered {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 800px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent #FFA726 transparent transparent;
+}
 
-   .menuContainer {
-    border: 1px solid #EAC78D;
-    background-color: #EAC78D;
-    border-radius: 20px;
-    text-align: center;
-    padding: 1%;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+.orders {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 800px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #FFA726;
+}
+
+.leftButtonContainer {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.buttonMenu {
+  background-color: transparent;
+  border: transparent;
+  font-weight: bold;
+  font-size: 37px;
+  cursor: pointer;
+  margin-left: 13%;
+}
+
+.buttonMenu:hover {
+  background-color: #FF5B80;
+  padding: 1%;
+  border-radius: 15px;
+}
+
+.tableContainer {
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2%;
+}
+
+.menuContainer {
+  border: 1px solid #EAC78D;
+  background-color: #EAC78D;
+  border-radius: 20px;
+  text-align: center;
+  padding: 1%;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   text-transform: capitalize;
-   }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1700px) {
+  body {
+    width: 100%;
+    height: 100%;
+  }
+}

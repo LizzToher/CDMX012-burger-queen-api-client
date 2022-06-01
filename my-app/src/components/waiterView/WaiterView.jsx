@@ -9,7 +9,6 @@ import logoSmall from '../../assets/logo-nav_small.png';
 
 const WaiterView = () => {
   const [category, setCategory] = useState('desayuno');
-  const [order, setOrder] = useState([]);
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
   let api = helpHttp();
@@ -40,10 +39,10 @@ const WaiterView = () => {
     navigate('/');
   };
 
-  const handleOnClick = (product) => {
-    setOrder(product);
+  /*const handleOnClick = (product) => {
+    setOrder();
     console.log(order);
-  };
+  };*/
 
  
 
@@ -54,7 +53,7 @@ const WaiterView = () => {
         <img className={styles.logosmall} src={logoSmall} alt="small logo" />
         <section className={styles.buttonContainer}>
           <button className={styles.button}>Menú</button>
-          <button className={styles.button} alt='logout' onClick={handleLogOut}>CS</button>
+          <button className={styles.buttonLogout} alt='logout' onClick={handleLogOut}>CS</button>
         </section>
       </section>
     </div>
@@ -84,7 +83,7 @@ const WaiterView = () => {
                 if (category === 'almuerzo') return p.category === 'almuerzo';
               }).map((product) =>{ 
                 return (
-                    <section key={product.id} className={styles.menuContainer} onClick={handleOnClick}>
+                    <section key={product.id} className={styles.menuContainer}>
                       {console.log(product.id)}
                       <h2>{product.product}</h2>
                       <h3>${product.price}</h3>
@@ -99,7 +98,7 @@ const WaiterView = () => {
 
 
         <div className={`${styles.split} ${styles.right}`}>
-          <div className={styles.centered}>
+          <div className={styles.orders}>
             <h1 className={styles.buttonMenu}>Órdenes</h1>
             
           </div>
