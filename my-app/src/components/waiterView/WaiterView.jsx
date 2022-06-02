@@ -87,16 +87,10 @@ const WaiterView = () => {
           </section>
         </section>
 
-        <section className={`${styles.split} ${styles.right}`}>
-          <section className={styles.centered}>
-            <h1 className={styles.buttonMenu}>Órdenes</h1>
-          </section>
-          <section className='hola'>
-            {orders &&
-              orders.map((product) => {
-                return (
-                  <section key={product.id} className={styles.menuContainer} >
-                    <table>
+        <section  className={styles.orderContainer}>
+            <h1 c>Órdenes</h1>
+          <section className={styles.orderTable}>
+                    
                       <thead>
                         <tr>
                           <th>Producto</th>
@@ -104,9 +98,14 @@ const WaiterView = () => {
                           <th>Precio</th>
                         </tr>
                       </thead>
+            {orders &&
+              orders.map((product) => {
+                return (
+                  <section key={product.id}  >
+                    <table>
                       <tbody>
                         <tr>
-                          <td>{product.product}</td>
+                          <td className={styles.cell}>{product.product}</td>
                           <td>cantidad</td>
                           <td>${product.price}</td>
                           <td>
@@ -116,7 +115,7 @@ const WaiterView = () => {
                       </tbody>
                     </table>
                   </section>
-                )
+                );
               })
             };
           </section>
