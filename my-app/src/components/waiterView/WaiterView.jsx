@@ -2,35 +2,22 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { WAITER } from '../../common/constants';
 import { UserContext } from '../../context/UserProvider';
-import { helpHttp } from '../../helper/helpHTTP';
 import styles from './WaiterView.module.css';
 import logoSmall from '../../assets/logo-nav_small.png';
-
+import fetchProducts from '../../hooks/Products';
 
 const WaiterView = () => {
   const [category, setCategory] = useState('desayuno');
-  const [order, setOrder] = useState([]);
-  const [products, setProducts] = useState([]);
+  const [orders, setOrders] = useState([]);
+  const [products] = fetchProducts();
   const navigate = useNavigate();
-  let api = helpHttp();
-  let url = 'http://localhost:5000/products';
   const { userRol, setUserRol, logout } = useContext(UserContext);
+
   useEffect(() => {
     if (!userRol || userRol.doc.rol !== WAITER) {
       navigate('/');
       setUserRol(null);
     }
-  }, []);
-
-  useEffect(() => {
-    api.get(url).then((res) => {
-      console.log(res);
-      if (!res.err) {
-        setProducts(res);
-      } else {
-        setProducts(null);
-      }
-    });
   }, []);
 
   const handleLogOut = async (e) => {
@@ -40,12 +27,19 @@ const WaiterView = () => {
     navigate('/');
   };
 
-  const handleOnClick = (product) => {
-    setOrder(product);
-    console.log(order);
+  const addProductToOrder = (product) => {
+    const newOrders = [...orders, product];
+    setOrders(newOrders);
+    console.log('desde addProductToOrder', product.product);
   };
 
- 
+  const removeProductFromOrder = (productId) => {
+    const orderIndex = orders.findIndex(order => order.id === productId);
+    const removedProduct = ([...orders.slice(0, orderIndex), ...orders.slice(orderIndex + 1)]);
+    setOrders(removedProduct);
+    console.log('desde removeProductFromOrder', orders);
+  };
+
 
   return (
 
@@ -64,46 +58,70 @@ const WaiterView = () => {
           <section className={styles.leftContainer}>
 
             <section className={styles.leftButtonContainer}>
-            <button className={styles.buttonMenu}
-               onClick={() => setCategory('desayuno')}
-              type='submit'>
-              Desayunos
-            </button>
-          
-            <button className={styles.buttonMenu} onClick={() => setCategory('almuerzo')}>
-              Almuerzos
-            </button>
+              <button className={styles.buttonMenu} onClick={() => setCategory('desayuno')} >
+                Desayunos
+              </button>
+
+              <button className={styles.buttonMenu} onClick={() => setCategory('almuerzo')}>
+                Almuerzos
+              </button>
             </section>
 
-      <section className={styles.tableContainer}>
-            
-      
-            {
-              products.filter((p) => {
-                if (category === 'desayuno') return p.category === 'desayuno';
-                if (category === 'almuerzo') return p.category === 'almuerzo';
-              }).map((product) =>{ 
-                return (
-                    <section key={product.id} className={styles.menuContainer} onClick={handleOnClick}>
-                      {console.log(product.id)}
-                      <h2>{product.product}</h2>
-                      <h3>${product.price}</h3>
-                    </section>
-                );
-              })
-            }
-        </section>
-  
-   </section>
-        </section>
+            <section className={styles.tableContainer}>
 
 
-        <div className={`${styles.split} ${styles.right}`}>
-          <div className={styles.centered}>
+              {products &&
+                products
+                  .filter((p) => category === p.category)
+                  .map((product) => {
+                    return (
+                      <section key={product.id} className={styles.menuContainer} onClick={() => addProductToOrder(product)}>
+                        <h2>{product.product}</h2>
+                        <h3>${product.price}</h3>
+                      </section>
+                    );
+                  })
+              }
+            </section>
+
+          </section>
+        </section>
+
+        <section className={`${styles.split} ${styles.right}`}>
+          <section className={styles.centered}>
             <h1 className={styles.buttonMenu}>Órdenes</h1>
-            
-          </div>
-        </div>
+          </section>
+          <section className='hola'>
+            {orders &&
+              orders.map((product) => {
+                return (
+                  <section key={product.id} className={styles.menuContainer} >
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Producto</th>
+                          <th>Cantidad</th>
+                          <th>Precio</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>{product.product}</td>
+                          <td>cantidad</td>
+                          <td>${product.price}</td>
+                          <td>
+                            <button onClick={() => removeProductFromOrder(product.id)}>Eliminar</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </section>
+                )
+              })
+            };
+          </section>
+        </section>
+
       </div>
     </>
   );
