@@ -117,9 +117,9 @@ const WaiterView = () => {
                       </tbody>
                     </table>
                   </section>
-                )
+                );
               })
-            };
+            }
           </section>
         </section>
       </div>
