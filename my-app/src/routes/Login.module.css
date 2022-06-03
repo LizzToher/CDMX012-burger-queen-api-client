@@ -69,7 +69,6 @@ body {
 }
 
 @media screen and (min-width: 1400px) and (max-width: 1700px){
-
  .formLogin {
   display: flex;
   flex-direction: column; 

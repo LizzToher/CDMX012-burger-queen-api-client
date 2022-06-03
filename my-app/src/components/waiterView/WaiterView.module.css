@@ -1,8 +1,6 @@
 body {
   background-color: #FFA726;
-  /* background: url('../../assets/background.png'); */
 }
-
 
 .container {
   display: flex;
@@ -22,8 +20,11 @@ body {
 
 .buttonContainer {
   width: 100%;
-  margin-top: 4%;
-  margin-left: 30%;
+ /* margin-top: 4%;*/
+  /*margin-left: 30%;*/
+  position: relative;
+  top: 4rem;
+  left: 25%;
 }
 
 .button {
@@ -32,8 +33,19 @@ body {
   font-weight: bold;
   font-size: 40px;
   cursor: pointer;
-  margin-left: 30%;
+ /*margin-left: 30%;*/
+  position: relative;
+  left: 25%;
+}
 
+.buttonLogout {
+  background-color: transparent;
+  border: transparent;
+  font-weight: bold;
+  font-size: 40px;
+  cursor: pointer;
+  position: relative;
+  left: 45%;
 }
 
 .button:hover {
@@ -41,10 +53,29 @@ body {
   border-radius: 15px;
 }
 
+.buttonLogout:hover {
+  background-color: #FF5B80;
+  border-radius: 15px;
+}
+
 /* Split the screen in half */
 .split {
   display: flex;
+}
 
+/* Control the left side */
+.left {
+  flex: 1;
+}
+
+/* Control the right side */
+.right {
+  background-color: #FFD95B;
+  flex: 1;
+}
+
+.left:first-child {
+  margin-right: 20px;
 }
 
 /* Control the left side */
@@ -89,11 +120,6 @@ body {
 .leftButtonContainer {
   margin-top: 10%;
   margin-bottom: 10%;
-  /* margin-left: 2%; */
-  /* justify-content: space-around; */
-  /* display: inline-block; */
-
-  /* margin-left: 2%; */
 }
 
 .buttonMenu {
@@ -131,7 +157,6 @@ body {
   text-transform: capitalize;
   cursor: pointer;
 }
-
 
 .orderContainer {
   display: flex;
