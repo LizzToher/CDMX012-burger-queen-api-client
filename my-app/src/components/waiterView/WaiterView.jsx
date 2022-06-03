@@ -10,7 +10,9 @@ const WaiterView = () => {
   const [category, setCategory] = useState('desayuno');
   const [orders, setOrders] = useState([]);
   const [products] = fetchProducts();
+
   const navigate = useNavigate();
+  
   const { userRol, setUserRol, logout } = useContext(UserContext);
 
   useEffect(() => {
@@ -40,7 +42,6 @@ const WaiterView = () => {
     console.log('desde removeProductFromOrder', orders);
   };
 
-
   return (
 
     <><div className={styles.container}>
@@ -48,7 +49,7 @@ const WaiterView = () => {
         <img className={styles.logosmall} src={logoSmall} alt="small logo" />
         <section className={styles.buttonContainer}>
           <button className={styles.button}>Menú</button>
-          <button className={styles.button} alt='logout' onClick={handleLogOut}>CS</button>
+          <button className={styles.buttonLogout} alt='logout' onClick={handleLogOut}>CS</button>
         </section>
       </section>
     </div>
@@ -120,7 +121,6 @@ const WaiterView = () => {
             };
           </section>
         </section>
-
       </div>
     </>
   );
