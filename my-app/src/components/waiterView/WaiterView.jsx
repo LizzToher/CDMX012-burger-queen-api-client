@@ -5,6 +5,7 @@ import { UserContext } from '../../context/UserProvider';
 import styles from './WaiterView.module.css';
 import logoSmall from '../../assets/logo-nav_small.png';
 import fetchProducts from '../../hooks/Products';
+import OrdersView from './OrdersView';
 
 const WaiterView = () => {
   const [category, setCategory] = useState('desayuno');
@@ -28,18 +29,15 @@ const WaiterView = () => {
   };
 
   const addProductToOrder = (product) => {
-    const newOrders = [...orders, product];
-    setOrders(newOrders);
-    console.log('desde addProductToOrder', product.product);
+    const productInOrder = orders.find(order => order.id === product.id);
+    if (productInOrder === undefined) {
+      const newOrders = [...orders, product];
+      setOrders(newOrders);
+    } else {
+      const removedDuplicateProduct = ([...orders.slice(0, productInOrder), ...orders.slice(productInOrder + 1)]);
+      setOrders(removedDuplicateProduct);
+    }
   };
-
-  const removeProductFromOrder = (productId) => {
-    const orderIndex = orders.findIndex(order => order.id === productId);
-    const removedProduct = ([...orders.slice(0, orderIndex), ...orders.slice(orderIndex + 1)]);
-    setOrders(removedProduct);
-    console.log('desde removeProductFromOrder', orders);
-  };
-
 
   return (
 
@@ -56,20 +54,16 @@ const WaiterView = () => {
       <div className={`${styles.split} ${styles.left}`}>
         <section className={styles.centered}>
           <section className={styles.leftContainer}>
-
             <section className={styles.leftButtonContainer}>
               <button className={styles.buttonMenu} onClick={() => setCategory('desayuno')} >
                 Desayunos
               </button>
-
               <button className={styles.buttonMenu} onClick={() => setCategory('almuerzo')}>
                 Almuerzos
               </button>
             </section>
 
             <section className={styles.tableContainer}>
-
-
               {products &&
                 products
                   .filter((p) => category === p.category)
@@ -83,44 +77,9 @@ const WaiterView = () => {
                   })
               }
             </section>
-
           </section>
         </section>
-
-        <section  className={styles.orderContainer}>
-            <h1 c>Órdenes</h1>
-          <section className={styles.orderTable}>
-                    
-                      <thead>
-                        <tr>
-                          <th>Producto</th>
-                          <th>Cantidad</th>
-                          <th>Precio</th>
-                        </tr>
-                      </thead>
-            {orders &&
-              orders.map((product) => {
-                return (
-                  <section key={product.id}  >
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td className={styles.cell}>{product.product}</td>
-                          <td>cantidad</td>
-                          <td>${product.price}</td>
-                          <td>
-                            <button onClick={() => removeProductFromOrder(product.id)}>Eliminar</button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </section>
-                );
-              })
-            };
-          </section>
-        </section>
-
+        <OrdersView orders={orders} setOrders={setOrders} />
       </div>
     </>
   );
