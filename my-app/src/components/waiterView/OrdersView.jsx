@@ -4,6 +4,7 @@ import styles from './WaiterView.module.css';
 const OrdersView = ({ orders, setOrders }) => {
 
   const [counter, setCounter] = useState(1);
+  // const [amount, setAmount] = useState(0);
 
   const removeProductFromOrder = (productId) => {
     const orderIndex = orders.findIndex(order => order.id === productId);
@@ -28,6 +29,18 @@ const OrdersView = ({ orders, setOrders }) => {
     }
   };
 
+  const totalPrice = () => {
+    return orders.reduce((total, item) => {
+      // De cada elemento obtenemos su precio
+      const miItem = orders.filter((order) => {
+          return order.id === parseInt(item);
+      });
+      // Los sumamos al total
+      return total + miItem[0].price;
+  }, 0).toFixed(2);
+   
+  };
+
   return (
 
     <section className={styles.orderContainer}>
@@ -37,32 +50,38 @@ const OrdersView = ({ orders, setOrders }) => {
           <thead>
             <tr>
               <th>Producto</th>
-              <th>Cantidad</th>
               <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Acción</th>
             </tr>
           </thead>
-          <tbody>
-            {orders &&
-              orders.map((product) => {
-                return (
-                  <section key={product.id}  >
-                    <tr>
-                      <td className={styles.cell}>{product.product}</td>
-                      <td>${product.price}</td>
-                      <td>
-                        <button onClick={() => incrementClik(product.id)}>+</button>
-                        <p type='number'>{counter}</p>
-                        <button onClick={() => decrementClik(product.id)}>-</button>
-                      </td>
-                      <td>
-                        <button onClick={() => removeProductFromOrder(product.id)}>Eliminar</button>
-                      </td>
-                    </tr>
-                  </section>
-                );
-              })
-            }
-          </tbody>
+          {orders &&
+            orders.map((product) => {
+              return (
+                <tbody key={product.id} >
+                  <tr>
+                    <td className={styles.cell}>{product.product}</td>
+                    <td>${product.price}</td>
+                    <td>
+                      <button onClick={() => incrementClik(product.id)}>+</button>
+                      <p type='number'>{counter}</p>
+                      <button onClick={() => decrementClik(product.id)}>-</button>
+                    </td>
+                    <td>
+                      <button onClick={() => removeProductFromOrder(product.id)}>Eliminar</button>
+                    </td>
+                  </tr>
+                </tbody>
+
+              );
+            })
+          }
+          <tfoot>
+            <tr>
+              <td>Total</td>
+              <td>{totalPrice}</td>
+            </tr>
+          </tfoot>
         </table>
       </section>
     </section>
