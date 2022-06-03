@@ -177,7 +177,7 @@ body {
   /* cursor: pointer; */
 /* } */ 
 table{
-width: 100%;
+/* width: 100%; */
 height: auto;
 /* margin: 86px; */
 /* margin-top: 30px; */
@@ -191,8 +191,8 @@ background-color: #F5F2F2;
 } 
 thead{
   background-color: #EAC78D;
-  width: 100%;
-height: auto;
+  /* width: 100%; */
+/* height: auto; */
 
 }
 thead tr :hover {
