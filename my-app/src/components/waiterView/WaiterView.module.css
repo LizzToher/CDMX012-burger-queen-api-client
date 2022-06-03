@@ -94,29 +94,27 @@ body {
   border: 2px solid yellow;
 }
 
-.left:first-child {
+/* .left:first-child {
   margin-right: 20px;
-}
+} */
 
 /* If you want the content centered horizontally and vertically */
 .centered {
   display: flex;
   flex-direction: column;
   width: 50%;
-  height: 800px;
-  border-width: 10px;
-  border-style: solid;
-  border-color: transparent #FFA726 transparent transparent;
+  /* height: 800px; */
+  /* align-items: flex-start; */
+  /* justify-content: center; */
+  /* text-align: center;  */
 }
 
-.orders {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 800px;
-  border-width: 10px;
-  border-style: solid;
-  border-color: transparent transparent transparent #FFA726;
+.leftContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+
+    /* align-items: center; */
 }
 
 .leftButtonContainer {
@@ -130,7 +128,7 @@ body {
   font-weight: bold;
   font-size: 37px;
   cursor: pointer;
-  margin-left: 13%;
+  /* margin-left: 13%; */
 }
 
 .buttonMenu:hover {
@@ -160,9 +158,63 @@ body {
   cursor: pointer;
 }
 
-@media screen and (min-width: 1400px) and (max-width: 1700px) {
-  body {
-    width: 100%;
-    height: 100%;
-  }
+.orderContainer {
+  display: flex;
+  flex-direction: column;
+  margin:auto;
+
+}
+/* .orderTable {
+  border: 1px solid #EAC78D;
+  background-color: #F5F2F2;
+  /* border-radius: 20px; */
+  /* text-align: center;
+  padding: 1%;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  text-transform: capitalize; */
+  /* width: auto; */
+  /* margin: 1% */
+  /* cursor: pointer; */
+/* } */ 
+table{
+width: 100%;
+height: auto;
+/* margin: 86px; */
+/* margin-top: 30px; */
+/* border-collapse: collapse; */
+/* border: 1px solid #eee; */
+/* border-bottom: 2px solid #EAC78D; */
+box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+background-color: #F5F2F2;
+/* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.05),
+  0px 20px 20px rgba(0, 0, 0, 0.05), 0px 30px 20px rgba(0, 0, 0, 0.05); */
+} 
+thead{
+  background-color: #EAC78D;
+  width: 100%;
+height: auto;
+
+}
+thead tr :hover {
+  background: #F5F2F2;
+}
+ 
+tbody tr:hover {
+  background: #EAC78D;
+}
+td {
+  /*color: #999;*/
+  font-size: 20px;
+  /* border: 1px solid #eee; */
+  padding: 12px 35px;
+  /* border-collapse: collapse; */
+}
+
+.cell{
+  width: 50%;
+}
+ 
+
+h1{
+  margin: auto;
 }
