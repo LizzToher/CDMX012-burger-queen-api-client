@@ -4,14 +4,12 @@ import styles from './WaiterView.module.css';
 const OrdersView = ({ orders, setOrders }) => {
 
   const [counter, setCounter] = useState(1);
-  // const [amount, setAmount] = useState(0);
 
   const removeProductFromOrder = (productId) => {
     const orderIndex = orders.findIndex(order => order.id === productId);
     const removedProduct = ([...orders.slice(0, orderIndex), ...orders.slice(orderIndex + 1)]);
     setOrders(removedProduct);
     setCounter(counter + 1);
-    console.log('desde removeProductFromOrder', orders);
     if (removeProductFromOrder) {
       setCounter(1);
     }
@@ -29,17 +27,8 @@ const OrdersView = ({ orders, setOrders }) => {
     }
   };
 
-  const totalPrice = () => {
-    return orders.reduce((total, item) => {
-      // De cada elemento obtenemos su precio
-      const miItem = orders.filter((order) => {
-          return order.id === parseInt(item);
-      });
-      // Los sumamos al total
-      return total + miItem[0].price;
-  }, 0).toFixed(2);
-   
-  };
+  const totalAmount = (Object.values(orders).reduce((acum, { price }) => acum + counter * price, 0));
+  console.log('precio total', totalAmount);
 
   return (
 
@@ -62,10 +51,10 @@ const OrdersView = ({ orders, setOrders }) => {
                   <tr>
                     <td className={styles.cell}>{product.product}</td>
                     <td>${product.price}</td>
-                    <td>
-                      <button onClick={() => incrementClik(product.id)}>+</button>
-                      <p type='number'>{counter}</p>
-                      <button onClick={() => decrementClik(product.id)}>-</button>
+                    <td className={styles.counter}>
+                      <button clasName={styles.counterbtn} onClick={() => decrementClik(product.id)}>-</button>
+                      <p>{counter}</p>
+                      <button clasName={styles.counterbtn} onClick={() => incrementClik(product.id)}>+</button>
                     </td>
                     <td>
                       <button onClick={() => removeProductFromOrder(product.id)}>Eliminar</button>
@@ -79,7 +68,9 @@ const OrdersView = ({ orders, setOrders }) => {
           <tfoot>
             <tr>
               <td>Total</td>
-              <td>{totalPrice}</td>
+              <td>${totalAmount}</td>
+              <td></td>
+              <button>Enviar pedido</button>
             </tr>
           </tfoot>
         </table>
