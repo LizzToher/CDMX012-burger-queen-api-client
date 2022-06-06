@@ -5,7 +5,7 @@
             "product": "café americano",
             "price": 5,
             "category": "desayuno",
-            "stock": ""
+            "stock": 1
         },
         {
             "id": 2,
@@ -82,7 +82,7 @@
             "product": "Bebida/Gaseosa 750 ML",
             "price": 10,
             "category": "almuerzo",
-            "stock": ""
+             "stock": ""
         }
     ]
 }
