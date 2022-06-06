@@ -27,7 +27,16 @@ body {
   font-weight: bold;
   font-size: 40px;
   margin: 3% 2% 0% 3%;
+}
 
+.buttonLogout {
+  background-color: transparent;
+  border: transparent;
+  font-weight: bold;
+  font-size: 40px;
+  cursor: pointer;
+  position: relative;
+  left: 45%;
 }
 
 .logout {
@@ -42,12 +51,18 @@ body {
   background-color: #FF5B80;
 }
 
+.buttonLogout:hover {
+  background-color: #FF5B80;
+  border-radius: 15px;
+}
+
 /* Split the screen in half */
 .split {
   display: flex;
   flex-direction: row;
   justify-content: center;
   }
+
 
 /* Control the left side */
 .left {
@@ -240,7 +255,5 @@ tfoot tr:hover {
     margin: 1.6% 2% 2% 2%;
     cursor: pointer;
   }
-
- 
 
 }

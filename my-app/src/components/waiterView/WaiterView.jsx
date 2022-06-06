@@ -8,7 +8,9 @@ import MenuView from './MenuView';
 const WaiterView = () => {
   const [orders, setOrders] = useState([]);
   const [products] = fetchProducts();
+
   const navigate = useNavigate();
+  
   const { userRol, setUserRol, logout } = useContext(UserContext);
 
   useEffect(() => {
