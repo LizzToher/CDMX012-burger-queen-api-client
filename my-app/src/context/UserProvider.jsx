@@ -43,24 +43,10 @@ const UserProvider = ({ children }) => {
     });
   };
 
-  // function setUserWithFirebaseAndRol(currentUser) {
-  //   getUserWithRol(currentUser.uid).then((rol) => {
-  //     const userData = {
-  //       uid: currentUser.uid,
-  //       email: currentUser.email,
-  //       rol: rol,
-  //     };
-  //     setUser(userData);
-  //     console.log('userData final', userData);
-  //   });
-  // }
-
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
-        // setUser(currentUser);
         getUserWithRol(currentUser);
-        // setUserWithFirebaseAndRol(currentUser);
       } else {
         setUser(null);
       }
