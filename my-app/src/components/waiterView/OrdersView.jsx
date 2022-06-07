@@ -62,12 +62,14 @@ const OrdersView = ({ orders, setOrders, tableValue }) => {
   } else {
     return (
       <>
+      <section  className={styles.noMessageContainer}>
         <p className={styles.orderMessage}>No hay órdenes</p>
         <img
           src={orderMessage}
           alt="Imagen aún no hay pedidos"
           className={styles.orderMessageImg}
         ></img>
+      </section>
       </>
     );
   }

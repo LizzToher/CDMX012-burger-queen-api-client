@@ -83,15 +83,15 @@ const MenuView = ({ products, orders, setOrders, handleLogOut }) => {
                 </section>
               </section>
             </section>
-            <OrdersView
-              style={[styles.split, styles.right]}
-              orders={orders}
-              setOrders={setOrders}
-              tableValue={tableValue}
-            />
           </article>
         </div>
       </div>
+      <OrdersView
+        style={[styles.split, styles.right]}
+        orders={orders}
+        setOrders={setOrders}
+        tableValue={tableValue}
+      />
     </>
   );
 };
