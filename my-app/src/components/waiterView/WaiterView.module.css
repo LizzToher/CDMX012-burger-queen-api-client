@@ -37,7 +37,7 @@ body {
   cursor: pointer;
 }
 
-.logout:hover{
+.logout:hover {
   background-color: #FF5B80;
 }
 
@@ -45,34 +45,37 @@ body {
 .split {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  }
-
+  position: absolute;
+}
 
 /* Control the left side */
 .left {
   flex: 1;
-  border: 2px solid yellow;
   width: 50%;
+  border: 10px solid #FFD95B;
+  border-right-color: #C77800;
 }
 
 /* Control the right side */
 .right {
-  width: 50%;
   flex: 1;
+  width: 96%;
+  height: 787px;
 }
 
- .centered {
-   flex:1;
-  width: 50%;
+.centered {
+  flex: 1;
+  width: 100%;
   height: 800px;
-} 
+  position: relative;
+}
 
 /*left side*/
 .leftContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-items: flex-start;
 }
 
 .leftButtonContainer {
@@ -89,6 +92,7 @@ body {
   justify-content: center;
   gap: 1rem;
   padding: 0.5%;
+  margin-top: 4%;
 }
 
 .menuProduct {
@@ -109,6 +113,7 @@ body {
   font-size: 35px;
   cursor: pointer;
   justify-content: space-between;
+  margin: 0 25% 0 18%;
 }
 
 .buttonMenu:hover {
@@ -121,18 +126,17 @@ body {
 .menuOrderContainer {
   display: flex;
   flex-direction: row;
-  flex:1;
+  /* flex:1; */
 }
 
 .orderContainer {
   display: flex;
-  flex-direction: column; 
-  padding: 3%;
-} 
+  flex-direction: column;
+}
 
 h1 {
   font-size: 35px;
-  margin: 0% 2% 4% 3%;
+  margin: 3% 2% 5% 3%;
   align-self: center;
 }
 
@@ -140,11 +144,12 @@ h1 {
   display: flex;
   text-transform: capitalize;
   cursor: pointer;
- margin-left: 10%;
- }
+  margin-left: 25px;
+
+}
 
 table {
-  width: 95%;
+  width: 650px;
   height: 200px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   background-color: #F5F2F2;
@@ -170,7 +175,7 @@ td {
 
 .counterContainer {
   display: flex;
-  margin: 25% auto 20%;
+  margin: 25% 0 25% 18%;
   background-color: #FF5B80;
   height: 35px;
   padding: 0;
@@ -182,22 +187,23 @@ td {
   color: white;
   font-weight: bold;
   font-size: medium;
-  border-color: transparent; 
+  border-color: transparent;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  margin-left: 10%;
 }
 
-.sendProduct{
+.sendProduct {
   background-color: #FF5B80;
   border-radius: 15px;
   color: white;
   font-weight: bold;
   font-size: medium;
-  border-color: transparent; 
+  border-color: transparent;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  margin: 20% 0% 20% 10%;
-
+  margin: 20% 0% 20% 11%;
+  /* margin: auto; */
 }
 
 p {
@@ -206,6 +212,26 @@ p {
 
 tfoot tr:hover {
   background: #EAC78D;
+}
+
+.orderMessage {
+  position: relative;
+  top: 100px;
+  left: 81%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 35px;
+  width: 200px;
+  margin: 0;
+}
+
+.orderMessageImg {
+  display: block;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  top: 250px;
+  left: 51%;
 }
 
 @media screen and (min-width: 1400px) and (max-width: 1700px) {

@@ -1,114 +1,75 @@
-import React, { useState } from 'react';
+import React from 'react';
+import OrderTable from './OrderTable';
 import styles from './WaiterView.module.css';
+import orderMessage from '../../assets/orderMessage.png';
 
 const OrdersView = ({ orders, setOrders }) => {
-
-  const [counter, setCounter] = useState(1);
-
   const removeProductFromOrder = (productId) => {
-    const orderIndex = orders.findIndex(order => order.id === productId);
-    const removedProduct = ([...orders.slice(0, orderIndex), ...orders.slice(orderIndex + 1)]);
+    const orderIndex = orders.findIndex((order) => order.id === productId);
+    const removedProduct = [
+      ...orders.slice(0, orderIndex),
+      ...orders.slice(orderIndex + 1),
+    ];
     setOrders(removedProduct);
-    setCounter(counter + 1);
-    if (removeProductFromOrder) {
-      setCounter(1);
-    }
   };
 
-  // const totalPriceOfCart = (orders) => {
-  const totalAmountCount = (Object.values(orders).reduce((acum, { quantity, price }) => acum + quantity * price, 0));
-  console.log('precio total', totalAmountCount);
-  //   console.log('precio total', totalPriceOfCart);
-
-  // };
+  const totalAmountCount = Object.values(orders).reduce(
+    (acum, { quantity, price }) => acum + quantity * price,
+    0
+  );
 
   const incrementClik = (productId) => {
     const updateOrders = orders.map((order) => {
-      if(productId === order.id) {
+      if (productId === order.id) {
         const orderQuantity = order.quantity;
-        return {...order, quantity: orderQuantity + 1};
+        return { ...order, quantity: orderQuantity + 1 };
       } else {
         return order;
       }
     });
-    setOrders(updateOrders);  
+    setOrders(updateOrders);
   };
 
   const decrementClik = (productId) => {
     const updateOrders = orders.map((order) => {
+      const orderQuantity = order.quantity;
+      if (orderQuantity === 1) {
+        return order;
+      }
+      if (productId === order.id) {
         const orderQuantity = order.quantity;
-        if(orderQuantity === 1){
-          return order;
-        } if(productId === order.id) {
-          return {...order, quantity: orderQuantity - 1};
-        }
-        else {
-          return order;
-        }
-    
+        return { ...order, quantity: orderQuantity - 1 };
+      } else {
+        return order;
+      }
     });
-    setOrders(updateOrders);  
+    setOrders(updateOrders);
   };
 
-if(orders.length > 0) {
-  return (
-    <div className={styles.container}>
-    <div className={styles.menuOrderContainer}>
-      <article className={`${styles.split} ${styles.right}`}>
-        <section className={styles.centered} >
-          <section className={styles.orderContainer}>
-            <h1>Órdenes</h1>
-            <section className={styles.tableContainer}>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Producto</th>
-                    <th>Precio</th>
-                    <th>Cantidad</th>
-                    <th>Acción</th>
-                  </tr>
-                </thead>
-                {orders &&
-                  orders.map((product) => {
-                    return (
-                      <tbody key={product.id} >
-                        <tr>
-                          <td>{product.product}</td>
-                          <td>${product.price}</td>
-                          <td className={styles.counterContainer}>
-                            <button clasName={styles.counterbtn} onClick={() => decrementClik(product.id)}>-</button>
-                            <p>{product.quantity}</p>
-                            <button clasName={styles.counterbtn} onClick={() => incrementClik(product.id)}>+</button>
-                          </td>
-                          <td>
-                            <button className={styles.deleteProduct} onClick={() => removeProductFromOrder(product.id)}>Eliminar</button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    );
-                  })
-                }
-                <tfoot>
-                  <tr>
-                    <td>Total</td>
-                    <td>${totalAmountCount}</td>
-                    <td></td>
-                    <button className={styles.sendProduct}>Enviar pedido</button>
-                  </tr>
-                </tfoot>
-                </table>
-            </section>
-          </section>
-        </section>
-      </article>
-    </div>
-    </div>
-  );
-} else {
-  return(
-<p>Aún no hay pedidos :(</p>
-  );
-}
+  if (orders.length > 0) {
+    return (
+      <div className={styles.container}>
+        <OrderTable
+          orders={orders}
+          incrementClik={incrementClik}
+          decrementClik={decrementClik}
+          removeProductFromOrder={removeProductFromOrder}
+          totalAmountCount={totalAmountCount}
+        />
+      </div>
+    );
+  } else {
+    return (
+      <>
+        <p className={styles.orderMessage}>No hay órdenes</p>
+        <img
+          src={orderMessage}
+          alt="Imagen aún no hay pedidos"
+          className={styles.orderMessageImg}
+        ></img>
+      </>
+    );
+  }
 };
 
 export default OrdersView;
