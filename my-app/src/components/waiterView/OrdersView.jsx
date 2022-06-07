@@ -3,7 +3,7 @@ import OrderTable from './OrderTable';
 import styles from './WaiterView.module.css';
 import orderMessage from '../../assets/orderMessage.png';
 
-const OrdersView = ({ orders, setOrders }) => {
+const OrdersView = ({ orders, setOrders, tableValue }) => {
   const removeProductFromOrder = (productId) => {
     const orderIndex = orders.findIndex((order) => order.id === productId);
     const removedProduct = [
@@ -55,6 +55,7 @@ const OrdersView = ({ orders, setOrders }) => {
           decrementClik={decrementClik}
           removeProductFromOrder={removeProductFromOrder}
           totalAmountCount={totalAmountCount}
+          tableValue={tableValue}
         />
       </div>
     );

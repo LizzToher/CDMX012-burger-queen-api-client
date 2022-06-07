@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './WaiterView.module.css';
 
-const OrderTable = ({orders, incrementClik, decrementClik, removeProductFromOrder, totalAmountCount}) => {
+const OrderTable = ({orders, incrementClik, decrementClik, removeProductFromOrder, totalAmountCount, tableValue}) => {
 
   return (
   <div className={styles.menuOrderContainer}>
@@ -16,7 +16,7 @@ const OrderTable = ({orders, incrementClik, decrementClik, removeProductFromOrde
                     <th>Producto</th>
                     <th>Precio</th>
                     <th>Cantidad</th>
-                    <th>Acción</th>
+                    <th>Mesa: {tableValue}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -27,9 +27,9 @@ const OrderTable = ({orders, incrementClik, decrementClik, removeProductFromOrde
                           <td>{product.product}</td>
                           <td>${product.price}</td>
                           <td className={styles.counterContainer}>
-                            <button onClick={() => decrementClik(product.id)}>-</button>
-                            <p>{product.quantity}</p>
-                            <button onClick={() => incrementClik(product.id)}>+</button>
+                            <button className={styles.btnProduct} onClick={() => decrementClik(product.id)}>-</button>
+                            <p className={styles.numberProduct}>{product.quantity}</p>
+                            <button className={styles.btnProduct} onClick={() => incrementClik(product.id)}>+</button>
                           </td>
                           <td>
                             <button className={styles.deleteProduct} onClick={() => removeProductFromOrder(product.id)}>Eliminar</button>
