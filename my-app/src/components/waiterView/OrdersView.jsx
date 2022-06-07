@@ -38,17 +38,19 @@ const OrdersView = ({ orders, setOrders }) => {
     const updateOrders = orders.map((order) => {
         const orderQuantity = order.quantity;
         if(orderQuantity === 1){
-          return console.log({...order, quantity: parseInt(orderQuantity)});
-        } else {
-          if(productId === order.id){
+          return order;
+        } if(productId === order.id) {
           return {...order, quantity: orderQuantity - 1};
-          }
+        }
+        else {
+          return order;
         }
     
     });
     setOrders(updateOrders);  
   };
 
+if(orders.length > 0) {
   return (
     <div className={styles.container}>
     <div className={styles.menuOrderContainer}>
@@ -102,6 +104,11 @@ const OrdersView = ({ orders, setOrders }) => {
     </div>
     </div>
   );
+} else {
+  return(
+<p>Aún no hay pedidos :(</p>
+  );
+}
 };
 
 export default OrdersView;
