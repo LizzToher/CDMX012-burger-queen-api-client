@@ -52,31 +52,31 @@ body {
 .left {
   flex: 1;
   width: 50%;
+  height: 790px;
   border: 10px solid #FFD95B;
   border-right-color: #C77800;
 }
 
 /* Control the right side */
-.right {
+/* .right {
   flex: 1;
-  width: 96%;
+  width: 50%;
   height: 787px;
-}
+} */
 
 .centered {
   flex: 1;
-  width: 100%;
-  height: 800px;
-  position: relative;
+  width: 1%;
+  height: 8px;
+  /* position: absolute; */
 }
 
 /*left side*/
 .leftContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
   align-items: flex-start;
-}
+ } 
 
 .leftButtonContainer {
   display: flex;
@@ -125,19 +125,26 @@ body {
 
 .menuOrderContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  height: 500px;
+  /* position: absolute; */
   /* flex:1; */
-}
+  /* margin: 0% 10% 0% 80; */
+ } 
 
-.orderContainer {
+/* .orderContainer {
   display: flex;
   flex-direction: column;
-}
+  /* position: absolute; */
+/* }  */
 
 h1 {
   font-size: 35px;
   margin: 3% 2% 5% 3%;
   align-self: center;
+  position: relative;
+  top:-490px;
+  left: 100%;
 }
 
 .tableContainer {
@@ -145,6 +152,10 @@ h1 {
   text-transform: capitalize;
   cursor: pointer;
   margin-left: 25px;
+  margin-top: -76%;
+  position: relative;
+  /* top: -500%; */
+  left: 101.5%;
 
 }
 
@@ -155,14 +166,6 @@ table {
   background-color: #F5F2F2;
 }
 
-.btnProduct {
-  font-size: 25px;
-}
-
-.numberProduct {
-  margin: 3% 10%;
-  font-size: 20px;
-}
 
 .tableNumber {
   display: flex;
@@ -171,13 +174,15 @@ table {
   align-items: center;
   position: relative;
   left: 35%;
+  /* width: 5%; */
   font-weight: bold;
 }
 
 .tableNumber select {
   width: 100px;
-  height: 45px;
-  font-size: 25px;
+  height: 40px;
+  font-size: 15px;
+  text-align: center;
 }
 
 thead {
@@ -239,28 +244,47 @@ tfoot tr:hover {
   background: #EAC78D;
 }
 
+.noMessageContainer{
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  height: 800px;
+}
+
 .orderMessage {
   position: relative;
-  top: 100px;
-  left: 81%;
+  top: -400px;
+  left: 260%;
   text-align: center;
   font-weight: bold;
   font-size: 35px;
   width: 200px;
-  margin: 0;
+  /* margin: 0; */
 }
 
 .orderMessageImg {
-  display: block;
+  /* display: block; */
   width: 300px;
   height: 300px;
   position: relative;
-  top: 250px;
-  left: 51%;
+  top: -400px;
+  left: 257%;
 }
 
-@media screen and (min-width: 1400px) and (max-width: 1700px) {
+.btnProduct {
+  font-size: 25px;
+}
 
+.selectValue{
+  font-size: 5px;
+}
+
+.numberProduct {
+  margin: 3% 10%;
+  font-size: 20px;
+}
+@media screen and (min-width: 1400px) and (max-width: 1700px) {
+  
   .headerContainer {
     display: flex;
     flex-direction: row;
@@ -269,7 +293,7 @@ tfoot tr:hover {
     height: 100px;
     background: #FFA726;
   }
-
+  
   .logosmall {
     width: 5%;
     height: 70%;

@@ -56,7 +56,7 @@ const MenuView = ({ products, orders, setOrders, handleLogOut }) => {
                 </section>
                 <section className={styles.tableNumber}>
                     <p>Mesa:</p>
-                    <select name="mesa" onChange={(e) => setTableValue(e.target.value)}>
+                    <select className={styles.selectValue} onChange={(e) => setTableValue(e.target.value)}>
                       <option value={1} selected>1</option>
                       <option value={2}>2</option>
                       <option value={3}>3</option>
@@ -83,15 +83,15 @@ const MenuView = ({ products, orders, setOrders, handleLogOut }) => {
                 </section>
               </section>
             </section>
-            <OrdersView
-              style={[styles.split, styles.right]}
-              orders={orders}
-              setOrders={setOrders}
-              tableValue={tableValue}
-            />
           </article>
         </div>
       </div>
+      <OrdersView
+        style={[styles.split, styles.right]}
+        orders={orders}
+        setOrders={setOrders}
+        tableValue={tableValue}
+      />
     </>
   );
 };
