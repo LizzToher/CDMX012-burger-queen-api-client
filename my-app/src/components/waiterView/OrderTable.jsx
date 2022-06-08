@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './WaiterView.module.css';
 
-const OrderTable = ({orders, incrementClik, decrementClik, removeProductFromOrder, totalAmountCount, tableValue}) => {
+const OrderTable = ({orders, incrementClik, decrementClik, removeProductFromOrder, totalAmountCount, tableValue, prueba}) => {
 
   return (
   <div className={styles.menuOrderContainer}>
       <article className={`${styles.split} ${styles.right}`}>
         <section className={styles.centered} >
-          <section className={styles.orderContainer}>
+          <section >
             <h1>Órdenes</h1>
             <section className={styles.tableContainer}>
               <table>
@@ -44,7 +44,7 @@ const OrderTable = ({orders, incrementClik, decrementClik, removeProductFromOrde
                     <td>Total</td>
                     <td>${totalAmountCount}</td>
                     <td></td>
-                    <button className={styles.sendProduct}>Enviar pedido</button>
+                    <button type='submit' onClick={() => prueba(orders)}className={styles.sendProduct}>Enviar pedido</button>
                   </tr>
                 </tfoot>
                 </table>
