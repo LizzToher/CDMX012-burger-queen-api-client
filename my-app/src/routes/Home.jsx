@@ -1,7 +1,7 @@
 import {useContext, useEffect} from 'react';
 import { UserContext } from '../context/UserProvider';
 import { useNavigate } from 'react-router-dom';
-import { WAITER } from '../common/constants';
+import { WAITER, CHEF } from '../common/constants';
 
 const Home = () => {
 
@@ -11,6 +11,9 @@ const Home = () => {
         }
         if(userRol.doc.rol === WAITER ){
             navigate('/WaiterView');
+        }
+        if(userRol.doc.rol === CHEF ){
+            navigate('/ChefView');
         }
         if(!userRol || !userRol.doc.rol){
             navigate('/');

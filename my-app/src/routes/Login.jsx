@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form';
 import styles from './Login.module.css';
 import burger from '../assets/burger.png';
 import logo_large from '../assets/logo_large.png';
-// import Views from '../Views';
 
 const Login = () => {
   const { login } = useAuth();

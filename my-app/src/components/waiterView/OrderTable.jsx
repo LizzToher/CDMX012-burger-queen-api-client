@@ -5,8 +5,7 @@ const OrderTable = ({ orders, incrementClik, decrementClik, removeProductFromOrd
 
   return (
     <div className={styles.menuOrderContainer}>
-      <article className={`${styles.split} ${styles.right}`}>
-        <section className={styles.centered} >
+      {/* <article className={`${styles.split} ${styles.right}`}> */}
           <section >
             <h1>Órdenes</h1>
             <section className={styles.tableContainer}>
@@ -51,8 +50,7 @@ const OrderTable = ({ orders, incrementClik, decrementClik, removeProductFromOrd
               </table>
             </section>
           </section>
-        </section>
-      </article>
+      {/* </article> */}
     </div>
   );
 };
