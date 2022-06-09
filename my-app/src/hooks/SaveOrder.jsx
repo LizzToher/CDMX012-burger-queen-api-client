@@ -1,6 +1,6 @@
-let url = 'http://localhost:5000/orderToKitchen';
+let url = 'http://localhost:5000/orders';
 
-const addOrderToKitchen = (newOrderArray) => {
+const addorders = (newOrderArray) => {
 
   fetch(url, {
     method: 'POST',
@@ -14,5 +14,5 @@ const addOrderToKitchen = (newOrderArray) => {
   return [newOrderArray];
 };
 
-export default addOrderToKitchen;
+export default addorders;
 

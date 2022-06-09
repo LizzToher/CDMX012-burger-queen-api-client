@@ -25,6 +25,12 @@ const ChefView = () => {
         await logout();
         setUserRol(null);
         navigate('/');
+      };    
+
+      const updateOrderStatus= () => {
+        const orderDetail = Object.assign({}, { date: new Date(), status: 'completado', products: orders });
+        console.log('before call saveorders', orderDetail);
+        addorders(orderDetail);
       };
    
   return (

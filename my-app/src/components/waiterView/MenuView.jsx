@@ -4,9 +4,9 @@ import logoSmall from '../../assets/logo-nav_small.png';
 import logout from '../../assets/logout.png';
 import OrdersView from './OrdersView';
 
-const MenuView = ({ products, orders, setOrders, handleLogOut, saveOrderToKitchen }) => {
+const MenuView = ({ products, orders, setOrders, handleLogOut, saveorders }) => {
   const [category, setCategory] = useState('desayuno');
-  const [tableValue, setTableValue] = useState(0);
+  const [tableValue, setTableValue] = useState(1);
 
   const addProductToOrder = (product) => {
     const productInOrder = orders.find((order) => order.id === product.id);
@@ -89,7 +89,7 @@ const MenuView = ({ products, orders, setOrders, handleLogOut, saveOrderToKitche
         orders={orders}
         setOrders={setOrders}
         tableValue={tableValue}
-        saveOrderToKitchen={saveOrderToKitchen}
+        saveorders={saveorders}
       />
     </>
   );

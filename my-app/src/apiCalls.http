@@ -1,4 +1,4 @@
-POST http://localhost:5000/ordertokitchen
+POST http://localhost:5000/orders
 content-type: application/json
 
 {
@@ -9,7 +9,7 @@ content-type: application/json
 
 ###
 
-GET http://localhost:5000/ordertokitchen
+GET http://localhost:5000/orders
 
 
 ###

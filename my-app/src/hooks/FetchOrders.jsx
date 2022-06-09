@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { helpHttp } from '../helper/helpHTTP';
 
 let api = helpHttp();
-let url = 'http://localhost:5000/orderToKitchen';
+let url = 'http://localhost:5000/orders';
   
 const fetchOrders = () => {
     const [ordersToKitchen, setOrdersToKitchen] = useState(null);

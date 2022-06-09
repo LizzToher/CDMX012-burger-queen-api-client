@@ -3,7 +3,7 @@ import OrderTable from './OrderTable';
 import styles from './WaiterView.module.css';
 import orderMessage from '../../assets/orderMessage.png';
 
-const OrdersView = ({ orders, setOrders, tableValue, saveOrderToKitchen}) => {
+const OrdersView = ({ orders, setOrders, tableValue, saveorders}) => {
 
   const removeProductFromOrder = (productId) => {
     const orderIndex = orders.findIndex((order) => order.id === productId);
@@ -57,7 +57,7 @@ const OrdersView = ({ orders, setOrders, tableValue, saveOrderToKitchen}) => {
           removeProductFromOrder={removeProductFromOrder}
           totalAmountCount={totalAmountCount}
           tableValue={tableValue}
-          saveOrderToKitchen={saveOrderToKitchen}
+          saveorders={saveorders}
   
         />
       </div>
