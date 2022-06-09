@@ -38,7 +38,6 @@ const MenuView = ({ products, orders, setOrders, handleLogOut, saveOrderToKitche
 
         <div className={styles.menuOrderContainer}>
           <article className={`${styles.split} ${styles.left}`}>
-            <section className={styles.centered}>
               <section className={styles.leftContainer}>
                 <section className={styles.leftButtonContainer}>
                   <button
@@ -82,7 +81,6 @@ const MenuView = ({ products, orders, setOrders, handleLogOut, saveOrderToKitche
                       })}
                 </section>
               </section>
-            </section>
           </article>
         </div>
       </div>

@@ -177,6 +177,118 @@
         }
       ],
       "id": 3
+    },
+    {
+      "date": "2022-06-09T02:06:30.207Z",
+      "table": 1,
+      "status": "pendiente",
+      "products": [
+        {
+          "id": 2,
+          "product": "café con leche",
+          "price": 7,
+          "category": "desayuno",
+          "stock": "",
+          "quantity": 1,
+          "table": 0,
+          "status": "pendiente",
+          "date": "2022-06-09T01:42:45.534Z"
+        },
+        {
+          "id": 4,
+          "product": "jugo de frutas natural",
+          "price": 7,
+          "category": "desayuno",
+          "stock": "",
+          "quantity": 1,
+          "table": 0,
+          "status": "pendiente",
+          "date": "2022-06-09T01:42:47.683Z"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "date": "2022-06-09T03:02:46.928Z",
+      "table": 1,
+      "status": "pendiente",
+      "products": [
+        {
+          "id": 2,
+          "product": "café con leche",
+          "price": 7,
+          "category": "desayuno",
+          "stock": "",
+          "quantity": 1,
+          "table": 0,
+          "status": "pendiente",
+          "date": "2022-06-09T03:02:34.840Z"
+        },
+        {
+          "id": 4,
+          "product": "jugo de frutas natural",
+          "price": 7,
+          "category": "desayuno",
+          "stock": "",
+          "quantity": 1,
+          "table": 0,
+          "status": "pendiente",
+          "date": "2022-06-09T03:02:36.008Z"
+        },
+        {
+          "id": 3,
+          "product": "sandwich de jamón y queso ",
+          "price": 10,
+          "category": "desayuno",
+          "stock": "",
+          "quantity": 1,
+          "table": 0,
+          "status": "pendiente",
+          "date": "2022-06-09T03:02:37.074Z"
+        },
+        {
+          "id": 1,
+          "product": "café americano",
+          "price": 5,
+          "category": "desayuno",
+          "stock": 1,
+          "quantity": 1,
+          "table": 0,
+          "status": "pendiente",
+          "date": "2022-06-09T03:02:38.071Z"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "date": "2022-06-09T04:02:16.804Z",
+      "table": 1,
+      "status": "pendiente",
+      "products": [
+        {
+          "id": 2,
+          "product": "café con leche",
+          "price": 7,
+          "category": "desayuno",
+          "stock": "",
+          "quantity": 1,
+          "table": "2",
+          "status": "pendiente",
+          "date": "2022-06-09T04:02:11.356Z"
+        },
+        {
+          "id": 1,
+          "product": "café americano",
+          "price": 5,
+          "category": "desayuno",
+          "stock": 1,
+          "quantity": 1,
+          "table": "2",
+          "status": "pendiente",
+          "date": "2022-06-09T04:02:14.327Z"
+        }
+      ],
+      "id": 6
     }
   ]
 }
