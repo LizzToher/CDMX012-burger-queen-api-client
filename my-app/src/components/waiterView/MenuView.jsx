@@ -4,14 +4,14 @@ import logoSmall from '../../assets/logo-nav_small.png';
 import logout from '../../assets/logout.png';
 import OrdersView from './OrdersView';
 
-const MenuView = ({ products, orders, setOrders, handleLogOut }) => {
+const MenuView = ({ products, orders, setOrders, handleLogOut, saveOrderToKitchen }) => {
   const [category, setCategory] = useState('desayuno');
   const [tableValue, setTableValue] = useState(0);
 
   const addProductToOrder = (product) => {
     const productInOrder = orders.find((order) => order.id === product.id);
     if (productInOrder === undefined) {
-      const newOrders = [...orders, { ...product, quantity: 1, table: tableValue, status:'pendiente', date: new Date()}];
+      const newOrders = [...orders, { ...product, quantity: 1, table: tableValue, status: 'pendiente', date: new Date() }];
       setOrders(newOrders);
       console.log(newOrders);
     } else {
@@ -55,15 +55,15 @@ const MenuView = ({ products, orders, setOrders, handleLogOut }) => {
                   </button>
                 </section>
                 <section className={styles.tableNumber}>
-                    <p>Mesa:</p>
-                    <select className={styles.selectValue} onChange={(e) => setTableValue(e.target.value)}>
-                      <option value={1} selected>1</option>
-                      <option value={2}>2</option>
-                      <option value={3}>3</option>
-                      <option value={4}>4</option>
-                      <option value={5}>5</option>
-                    </select>
-                  </section>
+                  <p>Mesa:</p>
+                  <select className={styles.selectValue} onChange={(e) => setTableValue(e.target.value)}>
+                    <option value={1} selected>1</option>
+                    <option value={2}>2</option>
+                    <option value={3}>3</option>
+                    <option value={4}>4</option>
+                    <option value={5}>5</option>
+                  </select>
+                </section>
                 <section className={styles.deployedMenu}>
                   {products &&
                     products
@@ -91,6 +91,7 @@ const MenuView = ({ products, orders, setOrders, handleLogOut }) => {
         orders={orders}
         setOrders={setOrders}
         tableValue={tableValue}
+        saveOrderToKitchen={saveOrderToKitchen}
       />
     </>
   );

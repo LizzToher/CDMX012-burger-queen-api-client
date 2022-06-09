@@ -2,11 +2,9 @@ import React from 'react';
 import OrderTable from './OrderTable';
 import styles from './WaiterView.module.css';
 import orderMessage from '../../assets/orderMessage.png';
-// import addOrderToKitchen from '../../hooks/OrderstoKitchen';
 
-const OrdersView = ({ orders, setOrders, tableValue,  }) => {
+const OrdersView = ({ orders, setOrders, tableValue, saveOrderToKitchen}) => {
 
-  // const [sendOrderToKitchen] = fetchOrderToKitchen();
   const removeProductFromOrder = (productId) => {
     const orderIndex = orders.findIndex((order) => order.id === productId);
     const removedProduct = [
@@ -49,15 +47,6 @@ const OrdersView = ({ orders, setOrders, tableValue,  }) => {
     setOrders(updateOrders);
   };
 
-  const prueba = (orders) =>{
-    const newOrderArray=  orders.map((order) =>
-        Object.assign({}, {product: order.product, quantity: order.quantity, date: order.date, table: order.table, status: 'pendiente' })
-    );
-    console.log('prueba si sirve', newOrderArray);
-    // addOrderToKitchen(newOrderArray);
-  };
-
-
   if (orders.length > 0) {
     return (
       <div className={styles.container}>
@@ -68,7 +57,8 @@ const OrdersView = ({ orders, setOrders, tableValue,  }) => {
           removeProductFromOrder={removeProductFromOrder}
           totalAmountCount={totalAmountCount}
           tableValue={tableValue}
-         prueba={prueba}
+          saveOrderToKitchen={saveOrderToKitchen}
+  
         />
       </div>
     );

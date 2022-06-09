@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './WaiterView.module.css';
 
-const OrderTable = ({orders, incrementClik, decrementClik, removeProductFromOrder, totalAmountCount, tableValue, prueba}) => {
+const OrderTable = ({ orders, incrementClik, decrementClik, removeProductFromOrder, totalAmountCount, tableValue, saveOrderToKitchen }) => {
 
   return (
-  <div className={styles.menuOrderContainer}>
+    <div className={styles.menuOrderContainer}>
       <article className={`${styles.split} ${styles.right}`}>
         <section className={styles.centered} >
           <section >
@@ -20,9 +20,9 @@ const OrderTable = ({orders, incrementClik, decrementClik, removeProductFromOrde
                   </tr>
                 </thead>
                 <tbody>
-                {orders &&
-                  orders.map((product) => {
-                    return (
+                  {orders &&
+                    orders.map((product) => {
+                      return (
                         <tr key={product.id}>
                           <td>{product.product}</td>
                           <td>${product.price}</td>
@@ -35,19 +35,20 @@ const OrderTable = ({orders, incrementClik, decrementClik, removeProductFromOrde
                             <button className={styles.deleteProduct} onClick={() => removeProductFromOrder(product.id)}>Eliminar</button>
                           </td>
                         </tr>
-                    );
-                  })
-                }
+                      );
+                    })
+                  }
                 </tbody>
                 <tfoot>
                   <tr>
                     <td>Total</td>
                     <td>${totalAmountCount}</td>
                     <td></td>
-                    <button type='submit' onClick={() => prueba(orders)}className={styles.sendProduct}>Enviar pedido</button>
+                    <td>
+                      <button type='submit' onClick={() => saveOrderToKitchen()} className={styles.sendProduct}>Enviar pedido</button></td>
                   </tr>
                 </tfoot>
-                </table>
+              </table>
             </section>
           </section>
         </section>
