@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { WAITER } from '../../common/constants';
 import { UserContext } from '../../context/UserProvider';
 import fetchProducts from '../../hooks/Products';
+import addOrderToKitchen from '../../hooks/SaveOrder';
 import MenuView from './MenuView';
 
 const WaiterView = () => {
@@ -10,7 +11,7 @@ const WaiterView = () => {
   const [products] = fetchProducts();
 
   const navigate = useNavigate();
-  
+
   const { userRol, setUserRol, logout } = useContext(UserContext);
 
   useEffect(() => {
@@ -26,10 +27,16 @@ const WaiterView = () => {
     setUserRol(null);
     navigate('/');
   };
+  
+  const saveOrderToKitchen = () => {
+    const orderDetail = Object.assign({}, { date: new Date(), table: 1, status: 'pendiente', products: orders });
+    console.log('before call saveOrderToKitchen', orderDetail);
+    addOrderToKitchen(orderDetail);
+  };
 
   return (
     <>
-      <MenuView products={products} orders={orders} setOrders={setOrders} handleLogOut={handleLogOut} />
+      <MenuView products={products} saveOrderToKitchen={saveOrderToKitchen} orders={orders} setOrders={setOrders} handleLogOut={handleLogOut} />
     </>
   );
 };
