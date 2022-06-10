@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './WaiterView.module.css';
 
-const OrderTable = ({ orders, incrementClik, decrementClik, removeProductFromOrder, totalAmountCount, tableValue, saveorders }) => {
+const OrderTable = ({ orders, incrementClik, decrementClik, removeProductFromOrder, totalAmountCount, tableValue, saveOrders }) => {
 
   return (
     <div className={styles.menuOrderContainer}>
@@ -44,7 +44,7 @@ const OrderTable = ({ orders, incrementClik, decrementClik, removeProductFromOrd
                     <td>${totalAmountCount}</td>
                     <td></td>
                     <td>
-                      <button type='submit' onClick={() => saveorders()} className={styles.sendProduct}>Enviar pedido</button></td>
+                      <button type='submit' onClick={() => saveOrders()} className={styles.sendProduct}>Enviar pedido</button></td>
                   </tr>
                 </tfoot>
               </table>

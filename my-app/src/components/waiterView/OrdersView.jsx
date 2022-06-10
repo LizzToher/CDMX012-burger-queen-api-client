@@ -3,7 +3,7 @@ import OrderTable from './OrderTable';
 import styles from './WaiterView.module.css';
 import orderMessage from '../../assets/orderMessage.png';
 
-const OrdersView = ({ orders, setOrders, tableValue, saveorders}) => {
+const OrdersView = ({ orders, setOrders, tableValue, saveOrders, status, setStatus}) => {
 
   const removeProductFromOrder = (productId) => {
     const orderIndex = orders.findIndex((order) => order.id === productId);
@@ -12,6 +12,11 @@ const OrdersView = ({ orders, setOrders, tableValue, saveorders}) => {
       ...orders.slice(orderIndex + 1),
     ];
     setOrders(removedProduct);
+    console.log(removedProduct);
+    if (removedProduct.length === 0) {
+      setStatus(null);
+    }
+    
   };
 
   const totalAmountCount = Object.values(orders).reduce(
@@ -47,7 +52,7 @@ const OrdersView = ({ orders, setOrders, tableValue, saveorders}) => {
     setOrders(updateOrders);
   };
 
-  if (orders.length > 0) {
+  if (status === 'waiting') {
     return (
       <div className={styles.container}>
         <OrderTable
@@ -57,15 +62,25 @@ const OrdersView = ({ orders, setOrders, tableValue, saveorders}) => {
           removeProductFromOrder={removeProductFromOrder}
           totalAmountCount={totalAmountCount}
           tableValue={tableValue}
-          saveorders={saveorders}
-  
+          saveOrders={saveOrders}
         />
       </div>
     );
-  } else {
+  } if (status === 'sent') {
+    return (
+    <section className={styles.noMessageContainer}>
+        <p className={styles.orderMessage}>¡Orden Enviada!</p>
+        <img
+          src={orderMessage}
+          alt="Imagen aún no hay pedidos"
+          className={styles.orderMessageImg}
+        ></img>
+      </section>
+    );
+  } if (status === null) {
     return (
       <>
-      <section  className={styles.noMessageContainer}>
+      <section className={styles.noMessageContainer}>
         <p className={styles.orderMessage}>No hay órdenes</p>
         <img
           src={orderMessage}

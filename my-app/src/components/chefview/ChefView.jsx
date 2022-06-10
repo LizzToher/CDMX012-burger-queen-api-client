@@ -48,11 +48,6 @@ const ChefView = () => {
   //ACTUALIZAR EL OBJETO
 
 
-
-
-
-
-
   // const updatedOrder = newOrderArray.map((order) => {
   //   if (order.id === newOrderArray.id) {
   //     const completedOrder = order.products.map((element) =>{
@@ -64,7 +59,19 @@ const ChefView = () => {
   // updateOrders(updatedOrder);
 
 
+    const handleLogOut = async (e) => {
+        e.preventDefault();
+        await logout();
+        setUserRol(null);
+        navigate('/');
+      };    
 
+      const updateOrderStatus= () => {
+        const orderDetail = Object.assign({}, { date: new Date(), status: 'completado', products: orders });
+        console.log('before call saveorders', orderDetail);
+        addOrders(orderDetail);
+      };
+   
 
   return (
     <>
