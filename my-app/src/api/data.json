@@ -87,8 +87,7 @@
   ],
   "orders": [
     {
-
-      "date": "2022-06-10T02:07:03.368Z",
+      "date": "2022-06-10T18:18:15.811Z",
       "table": 1,
       "status": "pendiente",
       "products": [
@@ -101,7 +100,7 @@
           "quantity": 1,
           "table": 1,
           "status": "pendiente",
-          "date": "2022-06-10T02:06:58.722Z"
+          "date": "2022-06-10T18:18:13.054Z"
         },
         {
           "id": 4,
@@ -112,73 +111,43 @@
           "quantity": 1,
           "table": 1,
           "status": "pendiente",
-          "date": "2022-06-10T02:06:59.422Z"
+          "date": "2022-06-10T18:18:13.813Z"
         }
       ],
       "id": 1
     },
     {
-      "date": "2022-06-10T02:08:35.281Z",
+      "date": "2022-06-10T18:18:22.789Z",
       "table": 1,
       "status": "pendiente",
       "products": [
         {
-          "id": 6,
-          "product": "Hamburguesa doble",
-          "price": 15,
-          "category": "almuerzo",
+          "id": 3,
+          "product": "sandwich de jamón y queso ",
+          "price": 10,
+          "category": "desayuno",
           "stock": "",
-          "quantity": 1,
+          "quantity": 2,
           "table": 1,
           "status": "pendiente",
-          "date": "2022-06-10T02:08:31.252Z"
+          "date": "2022-06-10T18:18:17.967Z"
         },
         {
-          "id": 9,
-          "product": "Agua 500 ML",
+          "id": 1,
+          "product": "café americano",
           "price": 5,
-          "category": "almuerzo",
-          "stock": "",
+          "category": "desayuno",
+          "stock": 1,
           "quantity": 1,
           "table": 1,
           "status": "pendiente",
-          "date": "2022-06-10T02:08:32.264Z"
+          "date": "2022-06-10T18:18:19.677Z"
         }
       ],
       "id": 2
     },
     {
-      "date": "2022-06-10T02:22:46.939Z",
-      "table": 1,
-      "status": "pendiente",
-      "products": [
-        {
-          "id": 6,
-          "product": "Hamburguesa doble",
-          "price": 15,
-          "category": "almuerzo",
-          "stock": "",
-          "quantity": 1,
-          "table": 1,
-          "status": "pendiente",
-          "date": "2022-06-10T02:22:39.417Z"
-        },
-        {
-          "id": 8,
-          "product": "Aros de cebolla",
-          "price": 5,
-          "category": "almuerzo",
-          "stock": "",
-          "quantity": 1,
-          "table": 1,
-          "status": "pendiente",
-          "date": "2022-06-10T02:22:40.042Z"
-        }
-      ],
-      "id": 3
-    },
-    {
-      "date": "2022-06-10T02:30:15.826Z",
+      "date": "2022-06-10T18:39:50.242Z",
       "table": 1,
       "status": "pendiente",
       "products": [
@@ -189,9 +158,9 @@
           "category": "desayuno",
           "stock": 1,
           "quantity": 1,
-          "table": 1,
+          "table": "2",
           "status": "pendiente",
-          "date": "2022-06-10T02:30:10.615Z"
+          "date": "2022-06-10T18:39:47.034Z"
         },
         {
           "id": 3,
@@ -200,133 +169,42 @@
           "category": "desayuno",
           "stock": "",
           "quantity": 1,
-          "table": 1,
+          "table": "2",
           "status": "pendiente",
-          "date": "2022-06-10T02:30:11.185Z"
+          "date": "2022-06-10T18:39:47.834Z"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "date": "2022-06-10T18:40:45.357Z",
+      "table": 1,
+      "status": "pendiente",
+      "products": [
+        {
+          "id": 6,
+          "product": "Hamburguesa doble",
+          "price": 15,
+          "category": "almuerzo",
+          "stock": "",
+          "quantity": 1,
+          "table": "2",
+          "status": "pendiente",
+          "date": "2022-06-10T18:40:43.413Z"
+        },
+        {
+          "id": 9,
+          "product": "Agua 500 ML",
+          "price": 5,
+          "category": "almuerzo",
+          "stock": "",
+          "quantity": 1,
+          "table": "2",
+          "status": "pendiente",
+          "date": "2022-06-10T18:40:43.733Z"
         }
       ],
       "id": 4
-    },
-    {
-      "date": "2022-06-10T02:31:48.237Z",
-      "table": 1,
-      "status": "pendiente",
-      "products": [
-        {
-          "id": 2,
-          "product": "café con leche",
-          "price": 7,
-          "category": "desayuno",
-          "stock": "",
-          "quantity": 1,
-          "table": 1,
-          "status": "pendiente",
-          "date": "2022-06-10T02:31:45.357Z"
-        },
-        {
-          "id": 4,
-          "product": "jugo de frutas natural",
-          "price": 7,
-          "category": "desayuno",
-          "stock": "",
-          "quantity": 1,
-          "table": 1,
-          "status": "pendiente",
-          "date": "2022-06-10T02:31:45.836Z"
-        }
-      ],
-      "id": 5
-    },
-    {
-      "date": "2022-06-10T02:32:54.118Z",
-      "table": 1,
-      "status": "pendiente",
-      "products": [
-        {
-          "id": 2,
-          "product": "café con leche",
-          "price": 7,
-          "category": "desayuno",
-          "stock": "",
-          "quantity": 1,
-          "table": 1,
-          "status": "pendiente",
-          "date": "2022-06-10T02:32:51.197Z"
-        },
-        {
-          "id": 4,
-          "product": "jugo de frutas natural",
-          "price": 7,
-          "category": "desayuno",
-          "stock": "",
-          "quantity": 1,
-          "table": 1,
-          "status": "pendiente",
-          "date": "2022-06-10T02:32:51.934Z"
-        }
-      ],
-      "id": 6
-    },
-    {
-      "date": "2022-06-10T02:32:58.619Z",
-      "table": 1,
-      "status": "pendiente",
-      "products": [
-        {
-          "id": 4,
-          "product": "jugo de frutas natural",
-          "price": 7,
-          "category": "desayuno",
-          "stock": "",
-          "quantity": 1,
-          "table": 1,
-          "status": "pendiente",
-          "date": "2022-06-10T02:32:55.278Z"
-
-        },
-        {
-          "id": 1,
-          "product": "café americano",
-          "price": 5,
-          "category": "desayuno",
-          "stock": 1,
-          "quantity": 2,
-          "table": 1,
-          "status": "pendiente",
-          "date": "2022-06-10T02:32:56.813Z"
-        }
-      ],
-      "id": 7
-    },
-    {
-      "date": "2022-06-10T02:33:58.618Z",
-      "table": 1,
-      "status": "pendiente",
-      "products": [
-        {
-          "id": 5,
-          "product": "Hamburguesa simple",
-          "price": 10,
-          "category": "almuerzo",
-          "stock": "",
-          "quantity": 2,
-          "table": 1,
-          "status": "pendiente",
-          "date": "2022-06-10T02:33:49.117Z"
-        },
-        {
-          "id": 7,
-          "product": "Papas fritas",
-          "price": 5,
-          "category": "almuerzo",
-          "stock": "",
-          "quantity": 1,
-          "table": 1,
-          "status": "pendiente",
-          "date": "2022-06-10T02:33:49.566Z"
-        }
-      ],
-      "id": 8
     }
   ]
 }

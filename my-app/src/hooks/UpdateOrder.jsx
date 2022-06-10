@@ -2,7 +2,7 @@ let url = 'http://localhost:5000/orders';
 
 const updateOrders = (newOrderArray) => {
 
-  fetch(url`${newOrderArray.id}`, {
+  fetch(url, {
     method: 'PATCH',
     body: JSON.stringify(newOrderArray),
     headers: {

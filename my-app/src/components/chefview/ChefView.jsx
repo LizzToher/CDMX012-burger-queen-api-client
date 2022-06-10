@@ -4,6 +4,7 @@ import { UserContext } from '../../context/UserProvider';
 import { CHEF } from '../../common/constants';
 import PendingOrders from './PendingOrders';
 import fetchOrders from '../../hooks/FetchOrders';
+import updateOrders from '../../hooks/UpdateOrder';
 // import updateOrders from '../../hooks/UpdateOrder';
 
 
@@ -34,15 +35,22 @@ const ChefView = () => {
   // };
 
   const updateOrderStatus = (product) => {
-    console.log(orders);
     console.log(product);
+    const changedStatud = [...orders, {...product, status: 'completado'}];
+    updateOrders(changedStatud);
     //getTotalOrders();
     // const orderIndex = orders.find((element) => element.id === order.id);
     // console.log(orders);
     // console.log(orderIndex);
     
   };
-  
+    //    const updateOrderStatus= () => {
+    //    const orderDetail = Object.assign({}, { date: new Date(), status: 'completado', products: orders });
+    //    console.log('before call saveorders', orderDetail);
+    //    addOrders(orderDetail);
+    //  };
+
+
   //ENCONTRAR EL OBJETO ESPECIFICO DENTRO DEL ARRAY
   //ACCEDER AL OBJETO Y APLICAR REEMPLAZO
   //ACTUALIZAR EL OBJETO
@@ -59,18 +67,6 @@ const ChefView = () => {
   // updateOrders(updatedOrder);
 
 
-    const handleLogOut = async (e) => {
-        e.preventDefault();
-        await logout();
-        setUserRol(null);
-        navigate('/');
-      };    
-
-      const updateOrderStatus= () => {
-        const orderDetail = Object.assign({}, { date: new Date(), status: 'completado', products: orders });
-        console.log('before call saveorders', orderDetail);
-        addOrders(orderDetail);
-      };
    
 
   return (
