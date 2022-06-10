@@ -4,22 +4,27 @@ import logoSmall from '../../assets/logo-nav_small.png';
 import logout from '../../assets/logout.png';
 import OrdersView from './OrdersView';
 
-const MenuView = ({ products, orders, setOrders, handleLogOut, saveorders }) => {
+const MenuView = ({ products, orders, setOrders, handleLogOut, saveOrders, status, setStatus }) => {
   const [category, setCategory] = useState('desayuno');
   const [tableValue, setTableValue] = useState(1);
+  
 
   const addProductToOrder = (product) => {
+    setStatus('waiting');
     const productInOrder = orders.find((order) => order.id === product.id);
     if (productInOrder === undefined) {
       const newOrders = [...orders, { ...product, quantity: 1, table: tableValue, status: 'pendiente', date: new Date() }];
       setOrders(newOrders);
       console.log(newOrders);
-    } else {
+      
+    }
+    else {
       const removedDuplicateProduct = [
         ...orders.slice(0, productInOrder),
         ...orders.slice(productInOrder + 1),
       ];
       setOrders(removedDuplicateProduct);
+
     }
   };
   return (
@@ -89,7 +94,9 @@ const MenuView = ({ products, orders, setOrders, handleLogOut, saveorders }) => 
         orders={orders}
         setOrders={setOrders}
         tableValue={tableValue}
-        saveorders={saveorders}
+        saveOrders={saveOrders}
+        status={status}
+        setStatus={setStatus}
       />
     </>
   );

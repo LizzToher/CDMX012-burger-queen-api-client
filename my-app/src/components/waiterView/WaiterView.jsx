@@ -3,12 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import { WAITER } from '../../common/constants';
 import { UserContext } from '../../context/UserProvider';
 import fetchProducts from '../../hooks/Products';
-import addorders from '../../hooks/SaveOrder';
+import addOrders from '../../hooks/SaveOrder';
 import MenuView from './MenuView';
 
 const WaiterView = () => {
   const [orders, setOrders] = useState([]);
   const [products] = fetchProducts();
+  const [status, setStatus] = useState(null);
 
   const navigate = useNavigate();
 
@@ -28,14 +29,16 @@ const WaiterView = () => {
     navigate('/');
   };
   
-  const saveorders = () => {
+  const saveOrders = () => {
     const orderDetail = Object.assign({}, { date: new Date(), table: 1, status: 'pendiente', products: orders });
-    addorders(orderDetail);
+    addOrders(orderDetail);
+    setStatus('sent');
+    setOrders([]);
   };
 
   return (
     <>
-      <MenuView products={products} saveorders={saveorders} orders={orders} setOrders={setOrders} handleLogOut={handleLogOut} />
+      <MenuView products={products} saveOrders={saveOrders} orders={orders} setOrders={setOrders} handleLogOut={handleLogOut} status={status} setStatus={setStatus} />
     </>
   );
 };

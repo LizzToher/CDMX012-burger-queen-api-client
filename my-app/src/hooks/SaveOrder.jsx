@@ -1,6 +1,6 @@
 let url = 'http://localhost:5000/orders';
 
-const addorders = (newOrderArray) => {
+const addOrders = (newOrderArray) => {
 
   fetch(url, {
     method: 'POST',
@@ -14,5 +14,5 @@ const addorders = (newOrderArray) => {
   return [newOrderArray];
 };
 
-export default addorders;
+export default addOrders;
 

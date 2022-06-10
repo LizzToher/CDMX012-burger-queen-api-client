@@ -30,7 +30,7 @@ const ChefView = () => {
       const updateOrderStatus= () => {
         const orderDetail = Object.assign({}, { date: new Date(), status: 'completado', products: orders });
         console.log('before call saveorders', orderDetail);
-        addorders(orderDetail);
+        addOrders(orderDetail);
       };
    
   return (
