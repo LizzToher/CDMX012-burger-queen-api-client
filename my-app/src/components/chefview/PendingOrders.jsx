@@ -5,7 +5,7 @@ import logosmall from '../../assets/logo-nav_small.png';
 import logout from '../../assets/logout.png';
 import PendingTable from './PendingTable';
 
-const PendingOrders = ({ orders, handleLogOut }) => {
+const PendingOrders = ({ orders, handleLogOut, updateOrderStatus }) => {
   return (
 
     <>
@@ -24,23 +24,23 @@ const PendingOrders = ({ orders, handleLogOut }) => {
 
         <div className={styles.menuOrderContainer}>
 
-        <article className={`${styles.split} ${styles.left}`}>
+          <article className={`${styles.split} ${styles.left}`}>
 
-        <section className={styles.leftContainer}>
+            <section className={styles.leftContainer}>
 
-        <section className={styles.leftButtonContainer}>
-        <h2 className={styles.menuLetter}>Pendientes</h2>
-        </section>
+              <section className={styles.leftButtonContainer}>
+                <h2 className={styles.menuLetter}>Pendientes</h2>
+              </section>
 
-        <section className={styles.deployedMenu}>
-                  
-                  <PendingTable  orders={orders} />
-        </section>
+              <section className={styles.deployedMenu}>
 
-        </section>
+                <PendingTable orders={orders} updateOrderStatus={updateOrderStatus} />
+              </section>
+
+            </section>
 
 
-        </article>
+          </article>
         </div>
         <CompletedOrders />
       </div>
