@@ -3,23 +3,23 @@ import { helpHttp } from '../helper/helpHTTP';
 
 let api = helpHttp();
 let url = 'http://localhost:5000/orders';
-  
+
 const fetchOrders = () => {
-    const [ordersToKitchen, setOrdersToKitchen] = useState(null);
-    
-    useEffect(() => {
-          console.log('useefect desde fetchorder');
-          api.get(url).then((res) => {
-            console.log('desde fetchorder',res);
-            if (!res.err) {
-                setOrdersToKitchen(res);
-            } else {
-                setOrdersToKitchen(null);
-            }
-          });
-        }, []);
-  
-    return [ordersToKitchen];
-  };
+  const [ordersToKitchen, setOrdersToKitchen] = useState(null);
+
+  useEffect(() => {
+    console.log('useefect desde fetchorder');
+    api.get(url).then((res) => {
+      console.log('desde fetchorder', res);
+      if (!res.err) {
+        setOrdersToKitchen(res);
+      } else {
+        setOrdersToKitchen(null);
+      }
+    });
+  }, []);
+
+  return [ordersToKitchen];
+};
 
 export default fetchOrders;

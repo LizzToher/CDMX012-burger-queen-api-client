@@ -30,6 +30,7 @@ const WaiterView = () => {
   
   const saveorders = () => {
     const orderDetail = Object.assign({}, { date: new Date(), table: 1, status: 'pendiente', products: orders });
+    console.log(orderDetail);
     addorders(orderDetail);
   };
 

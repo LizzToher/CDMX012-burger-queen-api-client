@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ChefView.module.css';
 
-const PendingTable = ({ orders }) => {
+const PendingTable = ({ orders, updateOrderStatus }) => {
   return (
     <div className={styles.menuOrderContainer}>
       <article className={styles.split}>
@@ -29,7 +29,7 @@ const PendingTable = ({ orders }) => {
                             <td key={i}>{element.quantity}</td>
                             <td key={i}>{element.date}</td>
                             <td key={i}>
-                              <button>{element.status}</button>
+                              <button onClick={()=> updateOrderStatus(element)}>{element.status}</button>
                             </td>
                           </tr>
                         );
