@@ -21,15 +21,16 @@ const PendingTable = ({ orders, updateOrderStatus }) => {
                 orders.map((data) => {
                   return (
                     <>
-                      {data.products.map((element, i) => {
+                      {data.products.map((element) => {
+                        console.log(data.id);
                         return (
-                          <tr key={data.id}>
-                            <td key={i}>{element.table}</td>
-                            <td key={i}>{element.product}</td>
-                            <td key={i}>{element.quantity}</td>
-                            <td key={i}>{element.date}</td>
-                            <td key={i}>
-                              <button onClick={()=> updateOrderStatus(element)}>{element.status}</button>
+                          <tr key={`${data.id}${element.id}`}>
+                            <td >{element.table}</td>
+                            <td >{element.product}</td>
+                            <td >{element.quantity}</td>
+                            <td >{element.date}</td>
+                            <td >
+                              <button onClick={()=> updateOrderStatus(element)}>pendiente</button>
                             </td>
                           </tr>
                         );

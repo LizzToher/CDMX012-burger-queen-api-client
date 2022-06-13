@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { WAITER } from '../../common/constants';
 import { UserContext } from '../../context/UserProvider';
 import fetchProducts from '../../hooks/Products';
-import addOrders from '../../hooks/SaveOrder';
+import addorders from '../../hooks/SaveOrder';
 import MenuView from './MenuView';
 
 const WaiterView = () => {
@@ -30,16 +30,15 @@ const WaiterView = () => {
   };
   
   const saveOrders = () => {
-    const orderDetail = Object.assign({}, { date: new Date(), table: 1, status: 'pendiente', products: orders });
-    console.log(orderDetail);
-    addOrders(orderDetail);
+    const orderDetail = Object.assign({}, {products: orders, date: new Date(), status: 'pendiente' });
+    addorders(orderDetail);
     setStatus('sent');
     setOrders([]);
   };
 
   return (
     <>
-      <MenuView products={products} saveOrders={saveOrders} orders={orders} setOrders={setOrders} handleLogOut={handleLogOut} status={status} setStatus={setStatus} />
+      <MenuView products={products} saveOrders={saveOrders} orders={orders} setOrders={setOrders} handleLogOut={handleLogOut} status={status} setStatus={setStatus}/>
     </>
   );
 };

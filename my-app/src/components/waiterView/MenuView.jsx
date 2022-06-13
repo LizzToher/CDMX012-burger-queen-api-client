@@ -13,7 +13,7 @@ const MenuView = ({ products, orders, setOrders, handleLogOut, saveOrders, statu
     setStatus('waiting');
     const productInOrder = orders.find((order) => order.id === product.id);
     if (productInOrder === undefined) {
-      const newOrders = [...orders, { ...product, quantity: 1, table: tableValue, status: 'pendiente', date: new Date() }];
+      const newOrders = [...orders, { ...product, quantity: 1, status : 'pendiente', table: tableValue, date: new Date() }];
       setOrders(newOrders);
       console.log(newOrders);
       
