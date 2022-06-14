@@ -5,7 +5,7 @@ const PendingTable = ({ orders, updateOrderStatus }) => {
   return (
     <div className={styles.menuOrderContainer}>
       <article className={styles.split}>
-        <section className={styles.tableContainer}>
+        <section className={styles.tableContainer1}>
           <table>
             <thead>
               <tr>
