@@ -10,9 +10,7 @@ const WaiterView = () => {
   const [orders, setOrders] = useState([]);
   const [products] = fetchProducts();
   const [status, setStatus] = useState(null);
-
   const navigate = useNavigate();
-
   const { userRol, setUserRol, logout } = useContext(UserContext);
 
   useEffect(() => {
@@ -28,17 +26,20 @@ const WaiterView = () => {
     setUserRol(null);
     navigate('/');
   };
-  
-  const saveOrders = () => {
-    const orderDetail = Object.assign({}, {products: orders, date: new Date(), status: 'pendiente' });
-    addorders(orderDetail);
-    setStatus('sent');
-    setOrders([]);
+
+  const saveOrders = (orders) => {
+    const savedOrder = orders.map((order) => {
+      const orderDetail = Object.assign({}, { product: order.product, quantity: order.quantity, date: order.date, table: order.table, status: 'pendiente' });
+      addorders(orderDetail);
+      setStatus('sent');
+      setOrders([]);
+      console.log(savedOrder);
+    });
   };
 
   return (
     <>
-      <MenuView products={products} saveOrders={saveOrders} orders={orders} setOrders={setOrders} handleLogOut={handleLogOut} status={status} setStatus={setStatus}/>
+      <MenuView products={products} saveOrders={saveOrders} orders={orders} setOrders={setOrders} handleLogOut={handleLogOut} status={status} setStatus={setStatus} />
     </>
   );
 };

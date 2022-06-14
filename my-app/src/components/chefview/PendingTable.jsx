@@ -13,28 +13,24 @@ const PendingTable = ({ orders, updateOrderStatus }) => {
                 <th>Producto</th>
                 <th>Cantidad</th>
                 <th>tiempo</th>
-                <th>Status</th>
+                <th>ID</th>
               </tr>
             </thead>
             <tbody>
               {orders &&
-                orders.map((data) => {
+                orders.map((order) => {
                   return (
                     <>
-                      {data.products.map((element) => {
-                        console.log(data.id);
-                        return (
-                          <tr key={`${data.id}${element.id}`}>
-                            <td >{element.table}</td>
-                            <td >{element.product}</td>
-                            <td >{element.quantity}</td>
-                            <td >{element.date}</td>
-                            <td >
-                              <button onClick={()=> updateOrderStatus(element)}>pendiente</button>
-                            </td>
-                          </tr>
-                        );
-                      })}
+                      <tr key={order.id}>
+                        <td >{order.table}</td>
+                        <td >{order.product}</td>
+                        <td >{order.quantity}</td>
+                        <td >{order.date}</td>
+                        <td >{order.id}</td>
+                        <td >
+                          <button onClick={() => updateOrderStatus(order)}>Pendiente</button>
+                        </td>
+                      </tr>
                     </>
                   );
                 })}

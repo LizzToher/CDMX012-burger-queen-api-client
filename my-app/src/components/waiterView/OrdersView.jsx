@@ -3,7 +3,7 @@ import OrderTable from './OrderTable';
 import styles from './WaiterView.module.css';
 import orderMessage from '../../assets/orderMessage.png';
 
-const OrdersView = ({ orders, setOrders, tableValue, saveOrders, status, setStatus}) => {
+const OrdersView = ({ orders, setOrders, tableValue, saveOrders, status, setStatus }) => {
 
   const removeProductFromOrder = (productId) => {
     const orderIndex = orders.findIndex((order) => order.id === productId);
@@ -16,22 +16,16 @@ const OrdersView = ({ orders, setOrders, tableValue, saveOrders, status, setStat
     if (removedProduct.length === 0) {
       setStatus(null);
     }
-    
   };
 
-  const totalAmountCount = Object.values(orders).reduce(
-    (acum, { quantity, price }) => acum + quantity * price,
-    0
-  );
+  const totalAmountCount = Object.values(orders).reduce((acum, { quantity, price }) => acum + quantity * price, 0);
 
   const incrementClik = (productId) => {
     const updateOrders = orders.map((order) => {
       if (productId === order.id) {
         const orderQuantity = order.quantity;
         return { ...order, quantity: orderQuantity + 1 };
-      } else {
-        return order;
-      }
+      } else { return order; }
     });
     setOrders(updateOrders);
   };
@@ -68,7 +62,7 @@ const OrdersView = ({ orders, setOrders, tableValue, saveOrders, status, setStat
     );
   } if (status === 'sent') {
     return (
-    <section className={styles.noMessageContainer}>
+      <section className={styles.noMessageContainer}>
         <p className={styles.orderMessage}>¡Orden Enviada!</p>
         <img
           src={orderMessage}
@@ -80,14 +74,14 @@ const OrdersView = ({ orders, setOrders, tableValue, saveOrders, status, setStat
   } if (status === null) {
     return (
       <>
-      <section className={styles.noMessageContainer}>
-        <p className={styles.orderMessage}>No hay órdenes</p>
-        <img
-          src={orderMessage}
-          alt="Imagen aún no hay pedidos"
-          className={styles.orderMessageImg}
-        ></img>
-      </section>
+        <section className={styles.noMessageContainer}>
+          <p className={styles.orderMessage}>No hay órdenes</p>
+          <img
+            src={orderMessage}
+            alt="Imagen aún no hay pedidos"
+            className={styles.orderMessageImg}
+          ></img>
+        </section>
       </>
     );
   }

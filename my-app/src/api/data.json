@@ -74,6 +74,37 @@
     }
   ],
   "orders": [
-
+    {
+      "product": "café con leche",
+      "quantity": 1,
+      "date": "2022-06-14T03:09:37.283Z",
+      "table": 1,
+      "status": "completado",
+      "id": 1
+    },
+    {
+      "product": "café con leche",
+      "quantity": 1,
+      "date": "2022-06-14T03:09:41.399Z",
+      "table": "2",
+      "status": "pendiente",
+      "id": 2
+    },
+    {
+      "product": "jugo de frutas natural",
+      "quantity": 1,
+      "date": "2022-06-14T03:09:46.146Z",
+      "table": "4",
+      "status": "pendiente",
+      "id": 3
+    },
+    {
+      "product": "jugo de frutas natural",
+      "quantity": 3,
+      "date": "2022-06-14T03:09:50.024Z",
+      "table": "3",
+      "status": "pendiente",
+      "id": 4
+    }
   ]
 }

@@ -12,7 +12,7 @@ const updateOrders = (orderToUpdate) => {
   }).then(res => res.json())
   .catch(error => console.error('Error:', error))
   .then(response => console.log('Success:', response));
-  console.log('id hook', orderToUpdate.id);
+  console.log('id hook', orderToUpdate);
   return [orderToUpdate];
 };
 
