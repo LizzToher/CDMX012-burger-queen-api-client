@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './ChefView.module.css';
 
 const PendingTable = ({ orders, updateOrderStatus }) => {
+
+console.log('123', orders);
   return (
     <div className={styles.menuOrderContainer}>
       <article className={styles.split}>
@@ -13,12 +15,13 @@ const PendingTable = ({ orders, updateOrderStatus }) => {
                 <th>Producto</th>
                 <th>Cantidad</th>
                 <th>tiempo</th>
-                <th>ID</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody>
               {orders &&
-                orders.map((order) => {
+                orders.filter((e) => e.status === 'pendiente').map((order) => {
+
                   return (
                     <>
                       <tr key={order.id}>
@@ -26,9 +29,8 @@ const PendingTable = ({ orders, updateOrderStatus }) => {
                         <td >{order.product}</td>
                         <td >{order.quantity}</td>
                         <td >{order.date}</td>
-                        <td >{order.id}</td>
                         <td >
-                          <button onClick={() => updateOrderStatus(order)}>Pendiente</button>
+                          <button onClick={() => updateOrderStatus(order)}>{order.status}</button>
                         </td>
                       </tr>
                     </>

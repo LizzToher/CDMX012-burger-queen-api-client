@@ -1,4 +1,4 @@
-const updateOrders = (orderToUpdate) => {
+const updateOrders = (orderToUpdate, updateOrdersToView) => {
   console.log('parametro que recibe hook', orderToUpdate);
 
   fetch(`http://localhost:5000/orders/${orderToUpdate.id}`, {
@@ -11,7 +11,10 @@ const updateOrders = (orderToUpdate) => {
     }
   }).then(res => res.json())
   .catch(error => console.error('Error:', error))
-  .then(response => console.log('Success:', response));
+  .then(response =>{
+    console.log('Success:', response);
+    updateOrdersToView(response);
+  } );
   console.log('id hook', orderToUpdate);
   return [orderToUpdate];
 };

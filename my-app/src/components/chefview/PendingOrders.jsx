@@ -42,7 +42,7 @@ const PendingOrders = ({ orders, handleLogOut, updateOrderStatus }) => {
 
           </article>
         </div>
-        <CompletedOrders />
+        <CompletedOrders orders={orders} updateOrderStatus={updateOrderStatus}/>
       </div>
     </>
   );

@@ -5,10 +5,12 @@ import { CHEF } from '../../common/constants';
 import PendingOrders from './PendingOrders';
 import fetchOrders from '../../hooks/FetchOrders';
 import updateOrders from '../../hooks/UpdateOrder';
+import { useState } from 'react';
 
 const ChefView = () => {
   const [orders] = fetchOrders();
   const navigate = useNavigate();
+  const [ordersToView, setOrdersToView] = useState();
   const { userRol, setUserRol, logout } = useContext(UserContext);
 
   useEffect(() => {
@@ -16,7 +18,8 @@ const ChefView = () => {
       navigate('/');
       setUserRol(null);
     }
-  }, []);
+    setOrdersToView(orders);
+  }, [orders]);
 
   const handleLogOut = async (e) => {
     e.preventDefault();
@@ -25,14 +28,27 @@ const ChefView = () => {
     navigate('/');
   };
 
-  const updateOrderStatus = (order) => {
-    const updatedOrder = Object.assign({}, { ...order, status: 'completado' });
-    updateOrders(updatedOrder);
+  const updateOrdersToView=(orderToUpdate)=>{
+    console.log(orders,orderToUpdate);
+    //crear una copia de orders->orders2
+
+    const updatedProduct = orders.findIndex((order) => order.id === orderToUpdate.id);
+    console.log('abc', updatedProduct);
+    const putUpdatedProduct = Object.assign({}, {updatedProduct});
+    setOrdersToView(putUpdatedProduct);
+    //...
+    //orders2[x]=nuevo valor
+    //setOrdersToView(??);
   };
 
+  const updateOrderStatus = (order) => {
+    const updatedOrder = Object.assign({}, { ...order, status: 'completado' });
+    updateOrders(updatedOrder, updateOrdersToView);
+  };
+   
   return (
     <>
-      <PendingOrders orders={orders} handleLogOut={handleLogOut} updateOrderStatus={updateOrderStatus} />
+      <PendingOrders orders={ordersToView} handleLogOut={handleLogOut} updateOrderStatus={updateOrderStatus} />
     </>
   );
 };

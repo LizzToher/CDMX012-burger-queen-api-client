@@ -68,9 +68,9 @@
     display: flex;
     text-transform: capitalize;
     cursor: pointer;
-    margin-left: 106%;
-    margin-top: -51%;
-    width: 90%;
+    margin-left: 105%;
+    margin-top: -52%;
+    width: 88%;
   }
 
   .tableContainer1 {
@@ -82,7 +82,7 @@
   }
   
   table {
-    width: 650px;
+    width: 620px;
     height: 200px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     background-color: #F5F2F2;
@@ -99,8 +99,10 @@
   
   tbody tr:hover {
     background: #EAC78D;
+    /* margin: 0; */
   }
   
   td {
-    font-size: 13px;
+    font-size: 15px;
+    
   }
