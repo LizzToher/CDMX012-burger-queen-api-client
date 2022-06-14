@@ -5,7 +5,7 @@ const PendingTable = ({ orders, updateOrderStatus }) => {
   return (
     <div className={styles.menuOrderContainer}>
       <article className={styles.split}>
-        <section className={styles.tableContainer}>
+        <section className={styles.tableContainer1}>
           <table>
             <thead>
               <tr>
@@ -13,27 +13,24 @@ const PendingTable = ({ orders, updateOrderStatus }) => {
                 <th>Producto</th>
                 <th>Cantidad</th>
                 <th>tiempo</th>
-                <th>Status</th>
+                <th>ID</th>
               </tr>
             </thead>
             <tbody>
               {orders &&
-                orders.map((data) => {
+                orders.map((order) => {
                   return (
                     <>
-                      {data.products.map((element, i) => {
-                        return (
-                          <tr key={data.id}>
-                            <td key={i}>{element.table}</td>
-                            <td key={i}>{element.product}</td>
-                            <td key={i}>{element.quantity}</td>
-                            <td key={i}>{element.date}</td>
-                            <td key={i}>
-                              <button onClick={()=> updateOrderStatus(element)}>{element.status}</button>
-                            </td>
-                          </tr>
-                        );
-                      })}
+                      <tr key={order.id}>
+                        <td >{order.table}</td>
+                        <td >{order.product}</td>
+                        <td >{order.quantity}</td>
+                        <td >{order.date}</td>
+                        <td >{order.id}</td>
+                        <td >
+                          <button onClick={() => updateOrderStatus(order)}>Pendiente</button>
+                        </td>
+                      </tr>
                     </>
                   );
                 })}

@@ -7,16 +7,16 @@ import OrdersView from './OrdersView';
 const MenuView = ({ products, orders, setOrders, handleLogOut, saveOrders, status, setStatus }) => {
   const [category, setCategory] = useState('desayuno');
   const [tableValue, setTableValue] = useState(1);
-  
+
 
   const addProductToOrder = (product) => {
     setStatus('waiting');
     const productInOrder = orders.find((order) => order.id === product.id);
     if (productInOrder === undefined) {
-      const newOrders = [...orders, { ...product, quantity: 1, table: tableValue, status: 'pendiente', date: new Date() }];
+      const newOrders = [...orders, { ...product, quantity: 1, status: 'pendiente', table: tableValue, date: new Date() }];
       setOrders(newOrders);
       console.log(newOrders);
-      
+
     }
     else {
       const removedDuplicateProduct = [
@@ -40,52 +40,51 @@ const MenuView = ({ products, orders, setOrders, handleLogOut, saveOrders, statu
             onClick={handleLogOut}
           />
         </header>
-
         <div className={styles.menuOrderContainer}>
           <article className={`${styles.split} ${styles.left}`}>
-              <section className={styles.leftContainer}>
-                <section className={styles.leftButtonContainer}>
-                  <button
-                    className={styles.buttonMenu}
-                    onClick={() => setCategory('desayuno')}
-                  >
-                    Desayunos
-                  </button>
-                  <button
-                    className={styles.buttonMenu}
-                    onClick={() => setCategory('almuerzo')}
-                  >
-                    Almuerzos
-                  </button>
-                </section>
-                <section className={styles.tableNumber}>
-                  <p>Mesa:</p>
-                  <select className={styles.selectValue} onChange={(e) => setTableValue(e.target.value)}>
-                    <option value={1} selected>1</option>
-                    <option value={2}>2</option>
-                    <option value={3}>3</option>
-                    <option value={4}>4</option>
-                    <option value={5}>5</option>
-                  </select>
-                </section>
-                <section className={styles.deployedMenu}>
-                  {products &&
-                    products
-                      .filter((p) => category === p.category)
-                      .map((product) => {
-                        return (
-                          <section
-                            key={product.id}
-                            className={styles.menuProduct}
-                            onClick={() => addProductToOrder(product)}
-                          >
-                            <h2>{product.product}</h2>
-                            <h3>${product.price}</h3>
-                          </section>
-                        );
-                      })}
-                </section>
+            <section className={styles.leftContainer}>
+              <section className={styles.leftButtonContainer}>
+                <button
+                  className={styles.buttonMenu}
+                  onClick={() => setCategory('desayuno')}
+                >
+                  Desayunos
+                </button>
+                <button
+                  className={styles.buttonMenu}
+                  onClick={() => setCategory('almuerzo')}
+                >
+                  Almuerzos
+                </button>
               </section>
+              <section className={styles.tableNumber}>
+                <p>Mesa:</p>
+                <select className={styles.selectValue} onChange={(e) => setTableValue(e.target.value)}>
+                  <option value={1} selected>1</option>
+                  <option value={2}>2</option>
+                  <option value={3}>3</option>
+                  <option value={4}>4</option>
+                  <option value={5}>5</option>
+                </select>
+              </section>
+              <section className={styles.deployedMenu}>
+                {products &&
+                  products
+                    .filter((p) => category === p.category)
+                    .map((product) => {
+                      return (
+                        <section
+                          key={product.id}
+                          className={styles.menuProduct}
+                          onClick={() => addProductToOrder(product)}
+                        >
+                          <h2>{product.product}</h2>
+                          <h3>${product.price}</h3>
+                        </section>
+                      );
+                    })}
+              </section>
+            </section>
           </article>
         </div>
       </div>

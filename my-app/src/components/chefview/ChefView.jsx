@@ -5,14 +5,10 @@ import { CHEF } from '../../common/constants';
 import PendingOrders from './PendingOrders';
 import fetchOrders from '../../hooks/FetchOrders';
 import updateOrders from '../../hooks/UpdateOrder';
-// import updateOrders from '../../hooks/UpdateOrder';
-
 
 const ChefView = () => {
   const [orders] = fetchOrders();
-
   const navigate = useNavigate();
-  
   const { userRol, setUserRol, logout } = useContext(UserContext);
 
   useEffect(() => {
@@ -29,45 +25,10 @@ const ChefView = () => {
     navigate('/');
   };
 
-  // const getTotalOrders = () => {
-  //   const totalOrders = orders.map((order) => order.products);
-  //   console.log(totalOrders.flat());
-  // };
-
-  const updateOrderStatus = (product) => {
-    console.log(product);
-    const changedStatud = [...orders, {...product, status: 'completado'}];
-    updateOrders(changedStatud);
-    //getTotalOrders();
-    // const orderIndex = orders.find((element) => element.id === order.id);
-    // console.log(orders);
-    // console.log(orderIndex);
-    
+  const updateOrderStatus = (order) => {
+    const updatedOrder = Object.assign({}, { ...order, status: 'completado' });
+    updateOrders(updatedOrder);
   };
-    //    const updateOrderStatus= () => {
-    //    const orderDetail = Object.assign({}, { date: new Date(), status: 'completado', products: orders });
-    //    console.log('before call saveorders', orderDetail);
-    //    addOrders(orderDetail);
-    //  };
-
-
-  //ENCONTRAR EL OBJETO ESPECIFICO DENTRO DEL ARRAY
-  //ACCEDER AL OBJETO Y APLICAR REEMPLAZO
-  //ACTUALIZAR EL OBJETO
-
-
-  // const updatedOrder = newOrderArray.map((order) => {
-  //   if (order.id === newOrderArray.id) {
-  //     const completedOrder = order.products.map((element) =>{
-  //       return Object.assign({}, {...element, status: element.status.replace('pendiente', 'completado')});
-  //     });
-  //     console.log('desde chef updated', updatedOrder);
-  //   }
-  // });
-  // updateOrders(updatedOrder);
-
-
-   
 
   return (
     <>

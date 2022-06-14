@@ -17,12 +17,27 @@ GET http://localhost:5000/products
 
 
 ###
-# PUT http://localhost:5000/orders HTTP/1.1
-PUT http://{localhost:5000/orders/order.id}
+PATCH  http://localhost:5000/orders/2
 Accept: application/json
 Content-Type: application/json
+If-Match: "pendiente"
 
 {
-    "name": "NEW",
-    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
-}
+      "date": "2022-06-10T18:53:35.758Z",
+      "table": 1,
+      "status": "COMPLETADO",
+      "products": [
+        {
+          "id": 1,
+          "product": "café americano",
+          "price": 5,
+          "category": "desayuno",
+          "stock": 1,
+          "quantity": 1,
+          "table": "5",
+          "status": "pendiente",
+          "date": "2022-06-10T18:53:33.549Z"
+        }
+      ],
+      "id": 2
+    }

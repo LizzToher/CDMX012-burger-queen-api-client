@@ -28,9 +28,9 @@ const PendingOrders = ({ orders, handleLogOut, updateOrderStatus }) => {
 
             <section className={styles.leftContainer}>
 
-              <section className={styles.leftButtonContainer}>
+             
                 <h2 className={styles.menuLetter}>Pendientes</h2>
-              </section>
+             
 
               <section className={styles.deployedMenu}>
 
