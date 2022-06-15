@@ -1,11 +1,8 @@
 import React from 'react';
 import styles from './ChefView.module.css';
-// import { useTimer } from 'use-timer';
+import moment from 'moment';
 
 const PendingTable = ({ ordersToView, updateOrderStatus }) => {
-  // const { time, start, pause, reset, status } = useTimer();
-
-console.log('desde pendingtable',ordersToView );
 
   return (
     <div className={styles.menuOrderContainer}>
@@ -31,7 +28,7 @@ console.log('desde pendingtable',ordersToView );
                         <td >{order.table}</td>
                         <td >{order.product}</td>
                         <td >{order.quantity}</td>
-                        <td >{order.startDate}</td>
+                        <td >{moment(order.startDate).startOf('milisecond').fromNow()}</td>
                         <td >
                         <button className={styles.deleteProduct} onClick={() => updateOrderStatus(order)}>pendiente</button>
                         </td>
