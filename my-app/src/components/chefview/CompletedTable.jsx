@@ -11,7 +11,6 @@ const CompletedTable = ({ordersToView}) => {
         <table>
           <thead>
             <tr>
-              <th>Id</th>
               <th>Mesa</th>
               <th>Producto</th>
               <th>Cantidad</th>
@@ -25,7 +24,6 @@ const CompletedTable = ({ordersToView}) => {
                 return (
                   <>
                     <tr key={order.id}>
-                      <td >{order.id}</td>
                       <td >{order.table}</td>
                       <td >{order.product}</td>
                       <td >{order.quantity}</td>

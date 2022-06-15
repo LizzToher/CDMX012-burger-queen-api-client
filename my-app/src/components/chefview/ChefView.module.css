@@ -52,6 +52,7 @@
 .split {
   display: flex;
   width: 50%;
+  height: 5%;
   flex-direction: column;
   position: absolute;
 }
@@ -78,7 +79,7 @@
   display: flex;
   text-transform: capitalize;
   cursor: pointer;
-  margin-left: 106%;
+  margin-left: 110%;
   margin-top: 3%;
   text-align: center;
 }
@@ -87,7 +88,7 @@
   display: flex;
   text-transform: capitalize;
   cursor: pointer;
-  margin-left: 22%;
+  margin-left: 16%;
   margin-top: 5%;
   text-align: center;
 }

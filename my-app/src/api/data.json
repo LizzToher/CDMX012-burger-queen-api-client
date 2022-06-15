@@ -80,7 +80,7 @@
       "startDate": "2022-06-15T13:58:28.123Z",
       "endDate": null,
       "table": 1,
-      "status": "pendiente",
+      "status": "completado",
       "id": 1
     },
     {
@@ -116,8 +116,17 @@
       "startDate": "2022-06-15T13:58:54.927Z",
       "endDate": null,
       "table": "4",
-      "status": "completado",
+      "status": "pendiente",
       "id": 5
+    },
+    {
+      "product": "jugo de frutas natural",
+      "quantity": 1,
+      "startDate": "2022-06-15T14:16:43.730Z",
+      "endDate": null,
+      "table": 1,
+      "status": "pendiente",
+      "id": 6
     }
   ]
 }
