@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from './ChefView.module.css';
 
-const CompletedTable = ({orders}) => {
+const CompletedTable = ({ordersToView}) => {
+
+  console.log('desde completedtable',ordersToView );
   return (
     <div className={styles.menuOrderContainer}>
     <article className={`${styles.split} ${styles.right}`}>
@@ -9,6 +11,7 @@ const CompletedTable = ({orders}) => {
         <table>
           <thead>
             <tr>
+              <th>Id</th>
               <th>Mesa</th>
               <th>Producto</th>
               <th>Cantidad</th>
@@ -17,15 +20,16 @@ const CompletedTable = ({orders}) => {
             </tr>
           </thead>
           <tbody>
-            {orders &&
-              orders.filter((e) => e.status === 'completado').map((order) => {
+            {ordersToView &&
+              ordersToView.filter((order) => order.status === 'completado').map((order) => {
                 return (
                   <>
                     <tr key={order.id}>
+                      <td >{order.id}</td>
                       <td >{order.table}</td>
                       <td >{order.product}</td>
                       <td >{order.quantity}</td>
-                      <td >{order.date}</td>
+                      <td >{order.startDate}</td>
                       <td >{order.status}</td>
                     </tr>
                   </>

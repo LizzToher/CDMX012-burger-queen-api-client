@@ -1,11 +1,13 @@
 import React from 'react';
 import CompletedTable from './CompletedTable';
 
-const CompletedOrders = ({ orders, updateOrderStatus }) => {
+const CompletedOrders = ({ ordersToView, updateOrderStatus }) => {
+
+  console.log('desde completedorder', ordersToView);
   return (
 
     <>
-      <CompletedTable orders={orders} updateOrderStatus={updateOrderStatus} />
+      <CompletedTable ordersToView={ordersToView} updateOrderStatus={updateOrderStatus} />
 
     </>
   );
