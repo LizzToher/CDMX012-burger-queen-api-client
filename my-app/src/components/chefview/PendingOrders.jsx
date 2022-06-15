@@ -7,9 +7,7 @@ import PendingTable from './PendingTable';
 
 const PendingOrders = ({ orders, handleLogOut, updateOrderStatus }) => {
   return (
-
     <>
-
       <div className={styles.container}>
         <header className={styles.headerContainer}>
           <img className={styles.logosmall} src={logosmall} alt="small logo" />
@@ -21,28 +19,20 @@ const PendingOrders = ({ orders, handleLogOut, updateOrderStatus }) => {
             onClick={handleLogOut}
           />
         </header>
-
         <div className={styles.menuOrderContainer}>
-
           <article className={`${styles.split} ${styles.left}`}>
-
             <section className={styles.leftContainer}>
-
-             
-                <h2 className={styles.menuLetter}>Pendientes</h2>
-             
-
+              <h2 className={styles.menuLetter}>Pendientes</h2>
               <section className={styles.deployedMenu}>
-
                 <PendingTable orders={orders} updateOrderStatus={updateOrderStatus} />
               </section>
-
             </section>
-
-
           </article>
         </div>
-        <CompletedOrders orders={orders} updateOrderStatus={updateOrderStatus}/>
+        <section className={styles.menuOrderContainer}>
+          <h2 className={styles.menuLetter1}>Completados</h2>
+          <CompletedOrders orders={orders} updateOrderStatus={updateOrderStatus} />
+        </section>
       </div>
     </>
   );

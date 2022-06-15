@@ -1,9 +1,12 @@
 import React from 'react';
 import styles from './ChefView.module.css';
+import { useTimer } from 'use-timer';
 
 const PendingTable = ({ orders, updateOrderStatus }) => {
+  const { time, start, pause, reset, status } = useTimer();
 
-console.log('123', orders);
+
+
   return (
     <div className={styles.menuOrderContainer}>
       <article className={styles.split}>
@@ -30,7 +33,7 @@ console.log('123', orders);
                         <td >{order.quantity}</td>
                         <td >{order.date}</td>
                         <td >
-                          <button onClick={() => updateOrderStatus(order)}>{order.status}</button>
+                          <button className={styles.deleteProduct} onClick={() => updateOrderStatus(order)}>{order.status}</button>
                         </td>
                       </tr>
                     </>

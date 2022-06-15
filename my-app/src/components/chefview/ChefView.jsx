@@ -10,7 +10,8 @@ import { useState } from 'react';
 const ChefView = () => {
   const [orders] = fetchOrders();
   const navigate = useNavigate();
-  const [ordersToView, setOrdersToView] = useState();
+  const updatedOrder = Object.assign({}, { ...orders });
+  const [ordersToView, setOrdersToView] = useState(updatedOrder);
   const { userRol, setUserRol, logout } = useContext(UserContext);
 
   useEffect(() => {
@@ -29,14 +30,22 @@ const ChefView = () => {
   };
 
   const updateOrdersToView=(orderToUpdate)=>{
-    console.log(orders,orderToUpdate);
+    console.log('lo que paso por parametro para la vista que quiero que se vea', orderToUpdate);
+    console.log('orden clonada', ordersToView);
+    console.log('este arreglo viene del hook fetchorder', orders);
+    
     //crear una copia de orders->orders2
 
-    const updatedProduct = orders.findIndex((order) => order.id === orderToUpdate.id);
-    console.log('abc', updatedProduct);
-    const putUpdatedProduct = Object.assign({}, {updatedProduct});
-    setOrdersToView(putUpdatedProduct);
-    //...
+    const updatedProduct = [...orders];
+     const findIdOrder = updatedProduct.find((order) => order.id === orderToUpdate.id);
+    if(findIdOrder){
+      console.log(' posicion del producto', updatedProduct);
+       const putUpdatedProduct = [orderToUpdate];
+       console.log(putUpdatedProduct);
+       setOrdersToView(putUpdatedProduct);
+    }
+    // console.log('index del filtrado', updatedProduct);
+    // //...
     //orders2[x]=nuevo valor
     //setOrdersToView(??);
   };

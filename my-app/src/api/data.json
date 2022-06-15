@@ -103,7 +103,7 @@
       "quantity": 1,
       "date": "2022-06-14T16:05:58.116Z",
       "table": 1,
-      "status": "pendiente",
+      "status": "completado",
       "id": 4
     },
     {
@@ -111,7 +111,7 @@
       "quantity": 1,
       "date": "2022-06-14T16:12:55.803Z",
       "table": 1,
-      "status": "pendiente",
+      "status": "completado",
       "id": 5
     },
     {

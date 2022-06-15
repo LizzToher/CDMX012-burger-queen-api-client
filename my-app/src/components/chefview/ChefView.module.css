@@ -1,108 +1,128 @@
 .container {
-    display: flex;
-    flex-direction: column;
-  }
+  display: flex;
+  flex-direction: column;
+}
+
 .headerContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    height: 150px;
-    background: #FFA726;
-  }
-  
-  .logosmall {
-    width: 10%;
-    height: 80%;
-    margin: 1% 2% 2% 2%;
-  }
-  
-  .menuLetter {
-    font-weight: bold;
-    font-size: 40px;
-    text-align: center;
-  }
-  
-  .logout {
-    display: flex;
-    width: 5%;
-    height: 60px;
-    margin: 3% 2% 2% 2%;
-    cursor: pointer;
-  }
-  
-  .logout:hover {
-    background-color: #FF5B80;
-  }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 150px;
+  background: #FFA726;
+}
 
-  /* left side*/
+.logosmall {
+  width: 10%;
+  height: 80%;
+  margin: 1% 2% 2% 2%;
+}
 
-  /* Split the screen in half */
+.menuLetter {
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+}
+
+.menuLetter1 {
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 3%;
+  position: relative;
+  left: 50%;
+  width: 50%;
+}
+
+.logout {
+  display: flex;
+  width: 5%;
+  height: 60px;
+  margin: 3% 2% 2% 2%;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background-color: #FF5B80;
+}
+
+/* left side*/
+
+/* Split the screen in half */
 .split {
-    display: flex;
-    width: 50%;
-    flex-direction: column;
-    position: absolute;
-  }
-  
-  /* Control the left side */
-  .left {
-    flex:0 1 50%;
-    height:78%;
-    border: 10px solid #FFD95B;
-    border-right-color: #C77800;
-  }
-  
-  .leftContainer {
-    display: flex;
-    flex-direction: column;
-   } 
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  position: absolute;
+}
 
-   .menuOrderContainer {
-    display: flex;
-    flex-direction: column;
-    height: 500px;
-   } 
+/* Control the left side */
+.left {
+  flex: 0 1 50%;
+  height: 78%;
+  border: 10px solid #FFD95B;
+  border-right-color: #C77800;
+}
 
-   .tableContainer {
-    display: flex;
-    text-transform: capitalize;
-    cursor: pointer;
-    margin-left: 105%;
-    margin-top: -52%;
-    width: 88%;
-  }
+.leftContainer {
+  display: flex;
+  flex-direction: column;
+}
 
-  .tableContainer1 {
-    display: flex;
-    text-transform: capitalize;
-    cursor: pointer;
-    margin-left:0;
-    margin-top: 5%;
-  }
-  
-  table {
-    width: 620px;
-    height: 200px;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    background-color: #F5F2F2;
-  }
-  
-  thead {
-    background-color: #EAC78D;
-    height: 30px;
-  }
-  
-  thead tr :hover {
-    background: #bcb2b2;
-  }
-  
-  tbody tr:hover {
-    background: #EAC78D;
-    /* margin: 0; */
-  }
-  
-  td {
-    font-size: 15px;
-    
-  }
+.menuOrderContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.tableContainer {
+  display: flex;
+  text-transform: capitalize;
+  cursor: pointer;
+  margin-left: 106%;
+  margin-top: 3%;
+  text-align: center;
+}
+
+.tableContainer1 {
+  display: flex;
+  text-transform: capitalize;
+  cursor: pointer;
+  margin-left: 22%;
+  margin-top: 5%;
+  text-align: center;
+}
+
+table {
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: #F5F2F2;
+}
+
+thead {
+  background-color: #EAC78D;
+  height: 30px;
+}
+
+thead tr :hover {
+  background: #bcb2b2;
+}
+
+tbody tr:hover {
+  background: #EAC78D;
+  /* margin: 0; */
+}
+
+td {
+  font-size: 19px;
+  padding: 20px;
+}
+
+.deleteProduct {
+  background-color: #FF5B80;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  font-size: medium;
+  border-color: transparent;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}

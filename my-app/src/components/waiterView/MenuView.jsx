@@ -24,7 +24,6 @@ const MenuView = ({ products, orders, setOrders, handleLogOut, saveOrders, statu
         ...orders.slice(productInOrder + 1),
       ];
       setOrders(removedDuplicateProduct);
-
     }
   };
   return (
