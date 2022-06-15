@@ -75,52 +75,49 @@
   ],
   "orders": [
     {
-      "product": "café con leche",
+      "product": "jugo de frutas natural",
       "quantity": 1,
-      "date": "2022-06-14T15:49:20.924Z",
+      "startDate": "2022-06-15T13:58:28.123Z",
+      "endDate": null,
       "table": 1,
-      "status": "completado",
+      "status": "pendiente",
       "id": 1
     },
     {
-      "product": "jugo de frutas natural",
+      "product": "café con leche",
       "quantity": 1,
-      "date": "2022-06-14T15:49:26.593Z",
-      "table": "4",
+      "startDate": "2022-06-15T13:58:30.743Z",
+      "endDate": null,
+      "table": 1,
       "status": "pendiente",
       "id": 2
     },
     {
-      "product": "Aros de cebolla",
+      "product": "café americano",
       "quantity": 1,
-      "date": "2022-06-14T16:02:35.989Z",
-      "table": "3",
+      "startDate": "2022-06-15T13:58:46.860Z",
+      "endDate": null,
+      "table": 1,
       "status": "pendiente",
       "id": 3
     },
     {
-      "product": "Agua 750 ML",
+      "product": "sandwich de jamón y queso ",
       "quantity": 1,
-      "date": "2022-06-14T16:05:58.116Z",
+      "startDate": "2022-06-15T13:58:50.032Z",
+      "endDate": null,
       "table": 1,
-      "status": "completado",
+      "status": "pendiente",
       "id": 4
     },
     {
-      "product": "sandwich de jamón y queso ",
+      "product": "jugo de frutas natural",
       "quantity": 1,
-      "date": "2022-06-14T16:12:55.803Z",
-      "table": 1,
+      "startDate": "2022-06-15T13:58:54.927Z",
+      "endDate": null,
+      "table": "4",
       "status": "completado",
       "id": 5
-    },
-    {
-      "product": "Hamburguesa doble",
-      "quantity": 1,
-      "date": "2022-06-14T16:21:57.985Z",
-      "table": 1,
-      "status": "completado",
-      "id": 6
     }
   ]
 }

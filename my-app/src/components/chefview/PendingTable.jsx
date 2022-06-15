@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './ChefView.module.css';
-import { useTimer } from 'use-timer';
+// import { useTimer } from 'use-timer';
 
-const PendingTable = ({ orders, updateOrderStatus }) => {
-  const { time, start, pause, reset, status } = useTimer();
+const PendingTable = ({ ordersToView, updateOrderStatus }) => {
+  // const { time, start, pause, reset, status } = useTimer();
 
-
+console.log('desde pendingtable',ordersToView );
 
   return (
     <div className={styles.menuOrderContainer}>
@@ -22,8 +22,8 @@ const PendingTable = ({ orders, updateOrderStatus }) => {
               </tr>
             </thead>
             <tbody>
-              {orders &&
-                orders.filter((e) => e.status === 'pendiente').map((order) => {
+              {ordersToView &&
+                ordersToView.filter((e) => e.status === 'pendiente').map((order) => {
 
                   return (
                     <>
@@ -31,9 +31,9 @@ const PendingTable = ({ orders, updateOrderStatus }) => {
                         <td >{order.table}</td>
                         <td >{order.product}</td>
                         <td >{order.quantity}</td>
-                        <td >{order.date}</td>
+                        <td >{order.startDate}</td>
                         <td >
-                          <button className={styles.deleteProduct} onClick={() => updateOrderStatus(order)}>{order.status}</button>
+                        <button className={styles.deleteProduct} onClick={() => updateOrderStatus(order)}>pendiente</button>
                         </td>
                       </tr>
                     </>

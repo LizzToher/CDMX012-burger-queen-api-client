@@ -29,7 +29,7 @@ const WaiterView = () => {
 
   const saveOrders = (orders) => {
     const savedOrder = orders.map((order) => {
-      const orderDetail = Object.assign({}, { product: order.product, quantity: order.quantity, date: order.date, table: order.table, status: 'pendiente' });
+      const orderDetail = Object.assign({}, { product: order.product, quantity: order.quantity, startDate: order.startDate, endDate: order.endDate, table: order.table, status: 'pendiente' });
       addorders(orderDetail);
       setStatus('sent');
       setOrders([]);

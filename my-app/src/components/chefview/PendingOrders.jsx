@@ -5,7 +5,8 @@ import logosmall from '../../assets/logo-nav_small.png';
 import logout from '../../assets/logout.png';
 import PendingTable from './PendingTable';
 
-const PendingOrders = ({ orders, handleLogOut, updateOrderStatus }) => {
+const PendingOrders = ({ ordersToView, handleLogOut, updateOrderStatus }) => {
+  console.log('desde pendingorder',ordersToView );
   return (
     <>
       <div className={styles.container}>
@@ -24,14 +25,14 @@ const PendingOrders = ({ orders, handleLogOut, updateOrderStatus }) => {
             <section className={styles.leftContainer}>
               <h2 className={styles.menuLetter}>Pendientes</h2>
               <section className={styles.deployedMenu}>
-                <PendingTable orders={orders} updateOrderStatus={updateOrderStatus} />
+                <PendingTable ordersToView={ordersToView} updateOrderStatus={updateOrderStatus} />
               </section>
             </section>
           </article>
         </div>
         <section className={styles.menuOrderContainer}>
           <h2 className={styles.menuLetter1}>Completados</h2>
-          <CompletedOrders orders={orders} updateOrderStatus={updateOrderStatus} />
+          <CompletedOrders ordersToView={ordersToView} updateOrderStatus={updateOrderStatus} />
         </section>
       </div>
     </>
