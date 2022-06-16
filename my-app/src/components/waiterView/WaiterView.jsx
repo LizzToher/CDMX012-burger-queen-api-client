@@ -5,11 +5,13 @@ import { UserContext } from '../../context/UserProvider';
 import fetchProducts from '../../hooks/Products';
 import addorders from '../../hooks/SaveOrder';
 import MenuView from './MenuView';
+import ReadyOrders from './ReadyOrders';
 
 const WaiterView = () => {
   const [orders, setOrders] = useState([]);
   const [products] = fetchProducts();
   const [status, setStatus] = useState(null);
+  const [navSection, setNavSection] = useState('menu');
   const navigate = useNavigate();
   const { userRol, setUserRol, logout } = useContext(UserContext);
 
@@ -37,10 +39,16 @@ const WaiterView = () => {
     });
   };
 
+  if (navSection === 'menu'){
   return (
     <>
-      <MenuView products={products} saveOrders={saveOrders} orders={orders} setOrders={setOrders} handleLogOut={handleLogOut} status={status} setStatus={setStatus} />
+      <MenuView products={products} saveOrders={saveOrders} orders={orders} setOrders={setOrders} handleLogOut={handleLogOut} status={status} setStatus={setStatus} setNavSection={setNavSection} />
     </>
   );
+} if (navSection === 'readyOrders'){
+  return( 
+    <ReadyOrders handleLogOut={handleLogOut} setNavSection={setNavSection} />
+  );
+}
 };
 export default WaiterView;
