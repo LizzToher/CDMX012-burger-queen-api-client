@@ -4,7 +4,7 @@ import logoSmall from '../../assets/logo-nav_small.png';
 import logout from '../../assets/logout.png';
 import OrdersView from './OrdersView';
 
-const MenuView = ({ products, orders, setOrders, handleLogOut, saveOrders, status, setStatus }) => {
+const MenuView = ({ products, orders, setOrders, handleLogOut, saveOrders, status, setStatus, setNavSection }) => {
   const [category, setCategory] = useState('desayuno');
   const [tableValue, setTableValue] = useState(1);
 
@@ -31,7 +31,8 @@ const MenuView = ({ products, orders, setOrders, handleLogOut, saveOrders, statu
       <div className={styles.container}>
         <header className={styles.headerContainer}>
           <img className={styles.logosmall} src={logoSmall} alt="small logo" />
-          <h2 className={styles.menuLetter}>Menú</h2>
+          <h2 className={styles.menuLetter} onClick={()=>setNavSection('menu')}>Menú</h2>
+          <h2 className={styles.menuLetter} onClick={()=>setNavSection('readyOrders')}>Órdenes listas</h2>
           <img
             className={styles.logout}
             src={logout}
@@ -59,7 +60,7 @@ const MenuView = ({ products, orders, setOrders, handleLogOut, saveOrders, statu
               <section className={styles.tableNumber}>
                 <p>Mesa:</p>
                 <select className={styles.selectValue} onChange={(e) => setTableValue(e.target.value)}>
-                  <option value={1} selected>1</option>
+                  <option value={1}>1</option>
                   <option value={2}>2</option>
                   <option value={3}>3</option>
                   <option value={4}>4</option>

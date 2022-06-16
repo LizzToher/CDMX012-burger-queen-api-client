@@ -8,7 +8,7 @@ import updateOrders from '../../hooks/UpdateOrder';
 
 const ChefView = () => {
   const navigate = useNavigate();
-  const [status, setStatus] = useState(true);
+  const [status, setStatus] = useState(null);
   const [ordersToView] = fetchOrders(status);
   const { userRol, setUserRol, logout } = useContext(UserContext);
 

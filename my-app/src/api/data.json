@@ -80,7 +80,7 @@
       "startDate": "2022-06-15T13:58:28.123Z",
       "endDate": null,
       "table": 1,
-      "status": "completado",
+      "status": "entregado",
       "id": 1
     },
     {
@@ -89,7 +89,7 @@
       "startDate": "2022-06-15T13:58:30.743Z",
       "endDate": null,
       "table": 1,
-      "status": "pendiente",
+      "status": "entregado",
       "id": 2
     },
     {
@@ -98,7 +98,7 @@
       "startDate": "2022-06-15T13:58:46.860Z",
       "endDate": null,
       "table": 1,
-      "status": "completado",
+      "status": "entregado",
       "id": 3
     },
     {
@@ -107,7 +107,7 @@
       "startDate": "2022-06-15T13:58:50.032Z",
       "endDate": null,
       "table": 1,
-      "status": "pendiente",
+      "status": "completado",
       "id": 4
     },
     {
@@ -116,7 +116,7 @@
       "startDate": "2022-06-15T13:58:54.927Z",
       "endDate": null,
       "table": "4",
-      "status": "pendiente",
+      "status": "completado",
       "id": 5
     },
     {

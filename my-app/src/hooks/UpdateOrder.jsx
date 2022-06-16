@@ -4,7 +4,7 @@ const updateOrders = (orderToUpdate) => {
   fetch(`http://localhost:5000/orders/${orderToUpdate.id}`, {
     method: 'PATCH',
     body: JSON.stringify({
-      status: 'completado'
+      status: orderToUpdate.status
     }),
     headers: {
       'Content-Type': 'application/json'
