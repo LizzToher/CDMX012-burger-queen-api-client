@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { UserContext } from './context/UserProvider';
 import Login from './routes/Login';
-import AdminView from './components/AdminView';
+import AdminView from './components/adminView/AdminView';
 import WaiterView from './components/waiterView/WaiterView';
 import Home from './routes/Home';
 import ChefView from './components/chefview/ChefView';

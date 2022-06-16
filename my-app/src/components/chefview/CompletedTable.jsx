@@ -3,8 +3,6 @@ import styles from './ChefView.module.css';
 import moment from 'moment';
 
 const CompletedTable = ({ ordersToView }) => {
-
-  console.log('desde completedtable', ordersToView);
   return (
     <div className={styles.menuOrderContainer}>
       <article className={`${styles.split} ${styles.right}`}>

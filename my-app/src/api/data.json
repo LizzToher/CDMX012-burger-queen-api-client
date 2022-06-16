@@ -107,7 +107,7 @@
       "startDate": "2022-06-15T13:58:50.032Z",
       "endDate": null,
       "table": 1,
-      "status": "completado",
+      "status": "entregado",
       "id": 4
     },
     {
@@ -116,7 +116,7 @@
       "startDate": "2022-06-15T13:58:54.927Z",
       "endDate": null,
       "table": "4",
-      "status": "completado",
+      "status": "entregado",
       "id": 5
     },
     {
