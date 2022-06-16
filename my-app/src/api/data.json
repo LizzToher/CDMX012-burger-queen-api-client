@@ -71,6 +71,30 @@
       "product": "Bebida/Gaseosa 750 ML",
       "price": 10,
       "category": "almuerzo"
+    },
+    {
+      "product": "café americano",
+      "price": 5,
+      "category": "desayuno",
+      "id": 13
+    },
+    {
+      "product": "café americano",
+      "price": 5,
+      "category": "desayuno",
+      "id": 14
+    },
+    {
+      "product": "café americano",
+      "price": 5,
+      "category": "desayuno",
+      "id": 15
+    },
+    {
+      "product": "café americano",
+      "price": 5,
+      "category": "desayuno",
+      "id": 16
     }
   ],
   "orders": [
