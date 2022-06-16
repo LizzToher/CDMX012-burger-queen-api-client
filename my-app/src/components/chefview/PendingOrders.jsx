@@ -6,7 +6,6 @@ import logout from '../../assets/logout.png';
 import PendingTable from './PendingTable';
 
 const PendingOrders = ({ ordersToView, handleLogOut, updateOrderStatus }) => {
-  console.log('desde pendingorder',ordersToView );
   return (
     <>
       <div className={styles.container}>

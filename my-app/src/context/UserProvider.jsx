@@ -27,7 +27,6 @@ const UserProvider = ({ children }) => {
 
   const getUserWithRol = (currentUser) => {
     const userRolData = query(collection(db, 'users'), where('email', '==', currentUser.email));
-    console.log(userRolData);
     let userRolArray = [];
     onSnapshot(userRolData, (querySnapshot) => {
       querySnapshot.forEach(doc => {
@@ -39,7 +38,6 @@ const UserProvider = ({ children }) => {
         );
       });
       setUserRol(userRolArray[0]);
-      console.log('getuserwithrol', userRolArray[0]);
     });
   };
 

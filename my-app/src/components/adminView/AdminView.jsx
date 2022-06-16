@@ -1,15 +1,18 @@
 import React, { useState, useEffect, useContext} from 'react';
-import logoSmall from '../assets/logo-nav_small.png';
-import styles from './AdminView.module.css';
 import { collection, query, onSnapshot } from 'firebase/firestore';
-import { db, auth } from '../firebase/firebase';
+import { db, auth } from '../../firebase/firebase';
 import { useNavigate } from 'react-router-dom';
-import { ADMIN } from '../common/constants';
-import { UserContext } from '../context/UserProvider';
+import { ADMIN } from '../../common/constants';
+import { UserContext } from '../../context/UserProvider';
+import AdminEmployees from './AdminEmployees';
+import AdminProducts from './AdminProducts';
+import fetchProducts from '../../hooks/Products';
 
 const AdminView = () => {
 
     const [users, setUsers] = useState([]);
+    const [products] = fetchProducts();
+    const [navSection, setNavSection] = useState('employees');
     const navigate = useNavigate();
     const { userRol, setUserRol, logout } = useContext(UserContext);
   useEffect(() => {
@@ -35,7 +38,6 @@ const AdminView = () => {
             );
           });
           setUsers(usersArray);
-          console.log(usersArray);
         });
         }
       }, []);
@@ -47,32 +49,17 @@ const AdminView = () => {
         navigate('/');
       };
 
-  return (
-    // <div className={styles.mainContainer}>
-   <>
- <div className={styles.container}>
-    <section className={styles.container}>
-        <img className={styles.logosmall} src={logoSmall} alt="small logo" />
-    <section className={styles.buttonContainer}>
-        <button className={styles.button}>Trabajadores</button>
-        <button className={styles.button}>Productos</button>
-        <button className={styles.button} alt='logout' onClick={handleLogOut}>CS</button>
-    </section>
-    </section>
- </div>
-     {
-         users.map(user => (
-         <section  className={styles.table} key={user.id}>
-        <table className={styles.cell}>
-          <h2>{user.data.name} {user.data.lastname} {user.data.rol}</h2>
-        </table>
-      </section>
-    ))
-    };
-   </>
-
-//   </div>
-  );
+      if (navSection === 'employees'){
+        return (
+          <>
+            <AdminEmployees users={users} handleLogOut={handleLogOut}  setNavSection={setNavSection} />
+          </>
+        );
+      } if (navSection === 'products'){
+        return( 
+          <AdminProducts products={products} handleLogOut={handleLogOut} setNavSection={setNavSection} />
+        );
+      }
 };
 
 export default AdminView;
