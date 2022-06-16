@@ -1,15 +1,16 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+
 import logoSmall from '../../assets/logo-nav_small.png';
 import logout from '../../assets/logout.png';
 import edit from '../../assets/edit.png';
 import delete1 from '../../assets/delete1.png';
 import styles from './AdminView.module.css';
-import AddProduct from './productsComponents/AddProduct';
+// import AddProduct from './productsComponents/AddProduct';
 
-const AdminProducts = ({ products, setNavSection, handleLogOut, navSection }) => {
+const AdminProducts = ({ products, setNavSection, handleLogOut }) => {
   // const [addProduct, setAddProduct] = useState('addProduct');
   
-  if(navSection === 'products'){
     return (
       <div className={styles.container}>
         <header className={styles.headerContainer}>
@@ -65,19 +66,21 @@ const AdminProducts = ({ products, setNavSection, handleLogOut, navSection }) =>
           </table>
         </section>
         <div>
-          <button className={styles.deleteProduct} onClick={() => setNavSection('addProduct')}>Agregar</button>
+          <Link to='new'>
+          <button className={styles.deleteProduct}>Agregar</button>
+            </Link>
         </div>
       </div>
     );
-  }
- 
+  
+ /*
   if(navSection === 'addProduct') {
     return (
       <>
         <AddProduct products={products} setNavSection={setNavSection} handleLogOut={handleLogOut} />
       </>
     );
-  }
+  }*/
 
 };
 
