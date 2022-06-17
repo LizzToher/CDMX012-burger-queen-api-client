@@ -6,7 +6,7 @@ import logout from '../../assets/logout.png';
 import edit from '../../assets/edit.png';
 import delete1 from '../../assets/delete1.png';
 import styles from './AdminView.module.css';
-// import AddProduct from './productsComponents/AddProduct';
+
 
 const AdminProducts = ({ products, setNavSection, handleLogOut }) => {
   // const [addProduct, setAddProduct] = useState('addProduct');
@@ -72,15 +72,7 @@ const AdminProducts = ({ products, setNavSection, handleLogOut }) => {
         </div>
       </div>
     );
-  
- /*
-  if(navSection === 'addProduct') {
-    return (
-      <>
-        <AddProduct products={products} setNavSection={setNavSection} handleLogOut={handleLogOut} />
-      </>
-    );
-  }*/
+
 
 };
 
