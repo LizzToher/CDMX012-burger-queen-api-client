@@ -11,7 +11,8 @@ import fetchProducts from '../../hooks/Products';
 const AdminView = () => {
 
     const [users, setUsers] = useState([]);
-    const [products] = fetchProducts();
+    const [deleteStatus, setDeleteStatus] = useState(null);
+    const [products] = fetchProducts(deleteStatus);
     const [navSection, setNavSection] = useState('employees');
     const navigate = useNavigate();
     const { userRol, setUserRol, logout } = useContext(UserContext);
@@ -57,7 +58,7 @@ const AdminView = () => {
         );
       } if (navSection === 'products'){
         return( 
-          <AdminProducts products={products} handleLogOut={handleLogOut} setNavSection={setNavSection} />
+          <AdminProducts products={products} deleteStatus={deleteStatus} setDeleteStatus={setDeleteStatus}  handleLogOut={handleLogOut} setNavSection={setNavSection} />
         );
       }
 };

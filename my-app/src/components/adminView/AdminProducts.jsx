@@ -6,10 +6,23 @@ import logout from '../../assets/logout.png';
 import edit from '../../assets/edit.png';
 import delete1 from '../../assets/delete1.png';
 import styles from './AdminView.module.css';
+import deleteProduct from '../../hooks/DeleteProduct';
+import fetchProducts from '../../hooks/Products';
 
 
-const AdminProducts = ({ products, setNavSection, handleLogOut }) => {
-  // const [addProduct, setAddProduct] = useState('addProduct');
+const AdminProducts = ({ deleteStatus, setDeleteStatus, products, setNavSection, handleLogOut }) => {
+
+  const [newDeleteStatus] = fetchProducts(deleteStatus);
+  const removeProductFromData = (productId) => {
+    const orderIndex = products.find((product) => product.id !== productId);
+    if(orderIndex){
+      setDeleteStatus(!deleteStatus);
+      console.log('quien es delete status',deleteStatus);
+      deleteProduct(orderIndex);
+
+    }
+ 
+  };
   
     return (
       <div className={styles.container}>
@@ -35,8 +48,8 @@ const AdminProducts = ({ products, setNavSection, handleLogOut }) => {
               </tr>
             </thead>
             <tbody>
-              {products &&
-                products.map((product) => {
+              {newDeleteStatus &&
+                newDeleteStatus.map((product) => {
                   return (
                     <>
                       <tr key={product.id}>
@@ -55,7 +68,7 @@ const AdminProducts = ({ products, setNavSection, handleLogOut }) => {
                             className={styles.action}
                             src={delete1}
                             alt="delete"
-                          // onClick={handleLogOut}
+                          onClick={()=>removeProductFromData(product.id)}
                           />
                         </td>
                       </tr>

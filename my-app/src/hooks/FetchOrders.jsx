@@ -7,7 +7,6 @@ let url = 'http://localhost:5000/orders';
 const fetchOrders = (status) => {
   const [ordersToKitchen, setOrdersToKitchen] = useState(null);
   
-  
   useEffect(() => {
     console.log('useefect desde fetchorder');
     api.get(url).then((res) => {

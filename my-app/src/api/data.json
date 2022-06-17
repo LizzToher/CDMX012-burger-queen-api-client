@@ -1,12 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "product": "café americano",
-      "price": 5,
-      "category": "desayuno"
-    },
-    {
       "id": 2,
       "product": "café con leche",
       "price": 7,
@@ -67,22 +61,16 @@
       "category": "almuerzo"
     },
     {
-      "id": 12,
-      "product": "Bebida/Gaseosa 750 ML",
-      "price": 10,
-      "category": "almuerzo"
-    },
-    {
-      "product": "wafles",
-      "price": "5",
-      "category": "desayuno",
-      "id": 17
-    },
-    {
       "product": "fresas con crema",
       "price": "2",
       "category": "almuerzo",
       "id": 18
+    },
+    {
+      "product": "fresas con crema",
+      "price": "20",
+      "category": "almuerzo",
+      "id": 19
     }
   ],
   "orders": [

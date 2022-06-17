@@ -41,3 +41,27 @@ If-Match: "pendiente"
       ],
       "id": 2
     }
+
+###
+
+DELETE  http://localhost:5000/products/18
+Accept: application/json
+Content-Type: application/json
+
+ {
+      "product": "fresas con crema",
+      "price": "2",
+      "category": "almuerzo",
+      "id": 18
+    }
+
+###
+POST http://localhost:5000/products
+content-type: application/json
+
+ {
+      "product": "fresas con crema",
+      "price": "2",
+      "category": "almuerzo",
+      "id": 18
+    }

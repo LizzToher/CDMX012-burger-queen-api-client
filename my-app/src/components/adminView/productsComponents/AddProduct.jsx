@@ -1,13 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+
+
 import logoSmall from '../../../assets/logo-nav_small.png';
 import logout from '../../../assets/logout.png';
 import styles from '../AdminView.module.css';
-import { useForm } from 'react-hook-form';
 import fetchProducts from '../../../hooks/Products';
-import { useNavigate } from 'react-router-dom';
 import addProduct from '../../../hooks/SaveProducts';
 
 const AddProduct = ({ setNavSection, handleLogOut }) => {
+ 
   const navigate = useNavigate();
   
   const [products] = fetchProducts();
@@ -19,12 +22,13 @@ const AddProduct = ({ setNavSection, handleLogOut }) => {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
-  
+  console.log(products);
   const onSubmit =( e)=>{
     console.log(e);
     e.preventDefault();
     // console.log(e.target.product.value);
     addProduct(products, e.target.product.value);
+  
 };
 
   return (
