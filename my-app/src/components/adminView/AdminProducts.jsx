@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 
 import logoSmall from '../../assets/logo-nav_small.png';
@@ -10,18 +10,15 @@ import deleteProduct from '../../hooks/DeleteProduct';
 import fetchProducts from '../../hooks/Products';
 
 
-const AdminProducts = ({ deleteStatus, setDeleteStatus, products, setNavSection, handleLogOut }) => {
+const AdminProducts = ({ products, setNavSection, handleLogOut }) => {
 
+  const [deleteStatus, setDeleteStatus] = useState(false);
   const [newDeleteStatus] = fetchProducts(deleteStatus);
   const removeProductFromData = (productId) => {
-    const orderIndex = products.find((product) => product.id !== productId);
-    if(orderIndex){
-      setDeleteStatus(!deleteStatus);
-      console.log('quien es delete status',deleteStatus);
-      deleteProduct(orderIndex);
-
-    }
- 
+    const orderIndex = products.find((product) => product.id === productId);
+    console.log('quien es delete status',deleteStatus);
+    deleteProduct(orderIndex);
+    setDeleteStatus(!deleteStatus);
   };
   
     return (
@@ -37,7 +34,7 @@ const AdminProducts = ({ deleteStatus, setDeleteStatus, products, setNavSection,
             onClick={handleLogOut}
           />
         </header>
-        <section>
+        <section className={styles.tableContainer}>
           <table>
             <thead>
               <tr>

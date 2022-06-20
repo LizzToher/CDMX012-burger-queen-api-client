@@ -4,8 +4,8 @@ import { helpHttp } from '../helper/helpHTTP';
 let api = helpHttp();
 let url = 'http://localhost:5000/products';
 
-const fetchProducts = (deleteStatus) => {
-  console.log('parametro que recibe product hook', deleteStatus);
+const fetchProducts = (status) => {
+  console.log('parametro que recibe product hook', status);
   const [products, setProducts] = useState(null);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const fetchProducts = (deleteStatus) => {
         setProducts(null);
       }
     });
-  }, [deleteStatus]);
+  }, [status]);
 
   return [products];
 };
