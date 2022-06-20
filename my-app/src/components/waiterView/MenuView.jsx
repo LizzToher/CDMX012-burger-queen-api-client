@@ -15,8 +15,6 @@ const MenuView = ({ products, orders, setOrders, handleLogOut, saveOrders, statu
     if (productInOrder === undefined) {
       const newOrders = [...orders, { ...product, quantity: 1, status: 'pendiente', table: tableValue, startDate: new Date(), endDate: null }];
       setOrders(newOrders);
-      console.log(newOrders);
-
     }
     else {
       const removedDuplicateProduct = [
