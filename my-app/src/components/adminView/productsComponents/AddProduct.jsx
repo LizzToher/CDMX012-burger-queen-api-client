@@ -1,35 +1,40 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
+import React, { useState} from 'react';
+// import { useNavigate } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 
 import logoSmall from '../../../assets/logo-nav_small.png';
 import logout from '../../../assets/logout.png';
 import styles from '../AdminView.module.css';
-import fetchProducts from '../../../hooks/Products';
 import addProduct from '../../../hooks/SaveProducts';
 
+
 const AddProduct = ({ setNavSection, handleLogOut }) => {
- 
-  const navigate = useNavigate();
-  
-  const [products] = fetchProducts();
-  
-  const handleOnClick = () => {
-    navigate(-1);
-    setNavSection('products');
-  };
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  // const navigate = useNavigate();
 
-  console.log(products);
-  const onSubmit =( e)=>{
-    console.log(e);
+  const [status, setStatus] = useState(null);
+  const [product, setProduct] = useState('');
+  const [price, setPrice] = useState('');
+  const [category, setCategory] = useState('desayuno');
+
+  // const handleOnClick = () => {
+  //   navigate(-1);
+  //   setNavSection('products');
+  // };
+
+  const onSubmit = (e) => {
     e.preventDefault();
-    // console.log(e.target.product.value);
-    addProduct(products, e.target.product.value);
-  
-};
+
+    const newProduct = {
+      product: product,
+      price: price,
+      category: category
+    };
+    addProduct(newProduct);
+    setStatus(!status);
+    setProduct('');
+  };
 
   return (
     <div className={styles.container}>
@@ -48,34 +53,24 @@ const AddProduct = ({ setNavSection, handleLogOut }) => {
           onClick={handleLogOut}
         />
       </header>
-      <button className={styles.backbtn} onClick={() => handleOnClick()}>regresar</button>
+      <Link to= '../adminView'>
+      <button className={styles.backbtn} >regresar</button>
+      </Link>
+
       <fieldset className={styles.formLogin}>
-      
         <form
           className="formContainer"
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={onSubmit}
         >
           <div>
-            <input type='text' className={styles.input} placeholder='Producto'
-              {...register('product', { required: true, maxLength: 20 })}
-            />
-            {errors.product?.type === 'required' &&
-              'Campo Producto es requerido'}
+            <input type='text' className={styles.input} placeholder='Producto' onChange={(e) => setProduct(e.target.value)} />
           </div>
+          <input type='number' className={styles.input} placeholder='Precio' onChange={(e) => setPrice(e.target.value)} />
           <div>
-            <input type='number'  className={styles.input} placeholder='Precio'
-              {...register('price', { required: true, min: 2, max: 6 })}
-            />
-            {errors.price?.type === 'required' && 'Campo Precio es requerido'}
-          </div>
-          <div  >
-          <select
-            {...register('category', { required: true })}
-          >
-            <option value={'desayuno'}>Desayuno</option>
-            <option value={'almuerzo'}>Almuerzo</option>
-            {errors.category?.type === 'required' && 'Campo Menú es requerido'}
-          </select>
+            <select onChange={(e) => setCategory(e.target.value)}>
+              <option value={'desayuno'}>Desayuno</option>
+              <option value={'almuerzo'}>Almuerzo</option>
+            </select>
           </div>
 
           <button className={styles.loginbtn} type="submit">
