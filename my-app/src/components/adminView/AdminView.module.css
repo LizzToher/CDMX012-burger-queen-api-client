@@ -52,6 +52,12 @@ body{
   margin-left: 20%;
   margin-top: 3%;
 }
+.tableContainerEmployees{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 10px;
+}
 
   table {
     /* display: block; */
@@ -64,7 +70,7 @@ body{
   thead th {
     background-color: #EAC78D;
   
-    font-size: 35px;
+    font-size: 30px;
     padding: 20px 35px;
    
   }
@@ -92,20 +98,25 @@ body{
   }
   
   td {
-    font-size: 30px;
+    font-size: 20px;
     padding: 12px 35px;
   }
   
   .deleteProduct {
     background-color: #FF5B80;
-    border-radius: 15px;
+    border-radius: 100%;
     color: white;
     font-weight: bold;
-    font-size: medium;
+    font-size: 100px;
+    text-align: center;
     border-color: transparent;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    margin-left: 10%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 200px;
+    right: 200px;
   }
 
   .buttonContainer{

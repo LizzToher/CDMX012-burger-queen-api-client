@@ -18,11 +18,6 @@ const AddProduct = ({ setNavSection, handleLogOut }) => {
   const [price, setPrice] = useState('');
   const [category, setCategory] = useState('desayuno');
 
-  // const handleOnClick = () => {
-  //   navigate(-1);
-  //   setNavSection('products');
-  // };
-
   const onSubmit = (e) => {
     e.preventDefault();
 
