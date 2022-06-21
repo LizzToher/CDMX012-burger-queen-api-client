@@ -1,6 +1,5 @@
-import React, { useState} from 'react';
-// import { useNavigate } from 'react-router-dom';
-import {Link} from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 import logoSmall from '../../../assets/logo-nav_small.png';
@@ -11,21 +10,13 @@ import addProduct from '../../../hooks/SaveProducts';
 
 const AddProduct = ({ setNavSection, handleLogOut }) => {
 
-  // const navigate = useNavigate();
-
   const [status, setStatus] = useState(null);
   const [product, setProduct] = useState('');
   const [price, setPrice] = useState('');
   const [category, setCategory] = useState('desayuno');
 
-  // const handleOnClick = () => {
-  //   navigate(-1);
-  //   setNavSection('products');
-  // };
-
   const onSubmit = (e) => {
     e.preventDefault();
-
     const newProduct = {
       product: product,
       price: price,
@@ -53,8 +44,8 @@ const AddProduct = ({ setNavSection, handleLogOut }) => {
           onClick={handleLogOut}
         />
       </header>
-      <Link to= '../adminView'>
-      <button className={styles.backbtn} >regresar</button>
+      <Link to='../adminView'>
+        <button className={styles.backbtn} >regresar</button>
       </Link>
 
       <fieldset className={styles.formLogin}>

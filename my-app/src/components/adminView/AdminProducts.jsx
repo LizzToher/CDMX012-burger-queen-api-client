@@ -14,6 +14,11 @@ const AdminProducts = ({ products, setNavSection, handleLogOut }) => {
 
   const [deleteStatus, setDeleteStatus] = useState(false);
   const [newDeleteStatus] = fetchProducts(deleteStatus);
+
+  const editProductFromData = (productId) => {
+    console.log(productId);
+  };
+
   const removeProductFromData = (productId) => {
     const orderIndex = products.find((product) => product.id === productId);
     console.log('quien es delete status',deleteStatus);
@@ -54,12 +59,14 @@ const AdminProducts = ({ products, setNavSection, handleLogOut }) => {
                         <td >{product.price}</td>
                         <td >{product.category}</td>
                         <td className={styles.buttonContainer}>
+                        <Link to={'edit/' + product.id}>
                           <img
                             className={styles.action}
                             src={edit}
                             alt="edit"
-                            // onClick={handleLogOut}
-                          />
+                            onClick={()=>editProductFromData(product.id)}
+                            />
+                            </Link>
                           <br />
                           <img
                             className={styles.action}
