@@ -20,7 +20,7 @@ const AdminEmployees = ({ setNavSection, handleLogOut, users }) => {
           onClick={handleLogOut}
         />
       </header>
-      <section >
+      <section className={styles.tableContainerEmployees} >
         <table>
           <thead>
             <tr>

@@ -84,7 +84,7 @@ const AdminProducts = ({ products, setNavSection, handleLogOut }) => {
         </section>
         <div>
           <Link to='new'>
-          <button className={styles.deleteProduct}>Agregar</button>
+          <button className={styles.deleteProduct}>+</button>
             </Link>
         </div>
       </div>
