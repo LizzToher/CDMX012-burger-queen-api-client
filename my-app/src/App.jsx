@@ -17,22 +17,12 @@ const App = () => {
   const { userRol } = useContext(UserContext);
   console.log('desde app', userRol);
 
-  // const productToEdit1 = products.map((product)=>{
-  //   if(product.id === id){
-  //     {
-  //       product: product,
-  //       price: price,
-  //       category: category
-  //     }
-  //   }
-  // })
   return (
     <Routes>
       <Route exact path='/' element={<Login />} />
       <Route exact path='/home' element={<Home />} />
       <Route exact path='/adminView' element={<AdminView />} />
       <Route exact path='/adminView/new' element={<AddProduct/>} />
-      {/* <Route exact path='/adminView/edit' element={<EditProduct/>} /> */}
       <Route exact path='/adminView/edit/:id' element={<EditProduct products={products} />} />
       <Route exact path='/waiterView' element={<WaiterView />} />    
       <Route exact path='/chefView' element={<ChefView />} /> 

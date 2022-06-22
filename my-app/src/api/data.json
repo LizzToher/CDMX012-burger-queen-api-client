@@ -77,18 +77,6 @@
       "price": "20",
       "category": "almuerzo",
       "id": 13
-    },
-    {
-      "product": "sopa de pollo",
-      "price": "20",
-      "category": "almuerzo",
-      "id": 14
-    },
-    {
-      "product": "pasta ",
-      "price": "4",
-      "category": "almuerzo",
-      "id": 15
     }
   ],
   "orders": [
@@ -143,7 +131,7 @@
       "startDate": "2022-06-15T14:16:43.730Z",
       "endDate": null,
       "table": 1,
-      "status": "completado",
+      "status": "entregado",
       "id": 6
     },
     {
@@ -152,8 +140,26 @@
       "startDate": "2022-06-15T14:54:54.195Z",
       "endDate": null,
       "table": 1,
-      "status": "pendiente",
+      "status": "entregado",
       "id": 7
+    },
+    {
+      "product": "café con leche",
+      "quantity": 2,
+      "startDate": "2022-06-22T15:47:38.110Z",
+      "endDate": null,
+      "table": 1,
+      "status": "entregado",
+      "id": 8
+    },
+    {
+      "product": "Aros de cebolla",
+      "quantity": 1,
+      "startDate": "2022-06-22T16:08:50.476Z",
+      "endDate": null,
+      "table": "2",
+      "status": "pendiente",
+      "id": 9
     }
   ]
 }
