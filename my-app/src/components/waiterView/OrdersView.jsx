@@ -1,4 +1,5 @@
 import React from 'react';
+
 import OrderTable from './OrderTable';
 import styles from './WaiterView.module.css';
 import orderMessage from '../../assets/orderMessage.png';

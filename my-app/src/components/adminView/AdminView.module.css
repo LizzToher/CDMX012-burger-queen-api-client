@@ -60,7 +60,6 @@ body{
 }
 
   table {
-    /* display: block; */
     cursor: pointer;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     background-color: #F5F2F2;
@@ -74,20 +73,13 @@ body{
     padding: 20px 35px;
    
   }
-  /* thead tr {
-    position: absolute;
-    /* height:200px;
-    width:100%; */
 
-    
-  /* } */
   thead tr :hover {
     background: #bcb2b2;
 
   }
   
   tbody{
-    /* display:block; */
     overflow:auto;
     height:200px;
     width:100%;
@@ -134,7 +126,6 @@ body{
 
   .formLogin {
     display: flex;
-    /* align-items: center; */
     justify-content: center;
     width: 40%;
     height: 400px;
@@ -186,7 +177,6 @@ body{
 
   .backbtn {
     margin: 2%;
-    /* font-size: 1px; */
     border-radius: 12px;
     background-color: #FF5B80;
     color: white;

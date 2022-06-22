@@ -1,7 +1,6 @@
 let url = 'http://localhost:5000/orders';
 
 const addOrders = (newOrderArray) => {
-
   fetch(url, {
     method: 'POST',
     body: JSON.stringify(newOrderArray),

@@ -8,9 +8,7 @@ const fetchOrders = (status) => {
   const [ordersToKitchen, setOrdersToKitchen] = useState(null);
   
   useEffect(() => {
-    console.log('useefect desde fetchorder');
     api.get(url).then((res) => {
-      console.log('desde fetchorder', res);
       if (!res.err) {
         setOrdersToKitchen(res);
       } else {
@@ -18,7 +16,6 @@ const fetchOrders = (status) => {
       }
     });
   }, [status]);
-
   return [ordersToKitchen];
 };
 

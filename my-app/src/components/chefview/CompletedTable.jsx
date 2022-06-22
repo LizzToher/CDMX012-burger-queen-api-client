@@ -1,6 +1,7 @@
 import React from 'react';
-import styles from './ChefView.module.css';
 import moment from 'moment';
+
+import styles from './ChefView.module.css';
 
 const CompletedTable = ({ ordersToView }) => {
   return (

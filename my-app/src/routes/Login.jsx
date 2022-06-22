@@ -1,18 +1,19 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth, UserContext } from '../context/UserProvider';
 import { useForm } from 'react-hook-form';
+
+import { useAuth, UserContext } from '../context/UserProvider';
 import styles from './Login.module.css';
 import burger from '../assets/burger.png';
 import logo_large from '../assets/logo_large.png';
 
 const Login = () => {
   const { login } = useAuth();
-  const { userRol  } = useContext(UserContext);
+  const { userRol } = useContext(UserContext);
   const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors }, setError } = useForm();
 
-  const onSubmitLogin = async ({ email, password }) => { 
+  const onSubmitLogin = async ({ email, password }) => {
     try {
       await login(email, password);
       console.log('usuario registrado', email, password);

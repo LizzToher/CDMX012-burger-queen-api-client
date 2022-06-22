@@ -1,4 +1,5 @@
 import React from 'react';
+
 import logoSmall from '../../assets/logo-nav_small.png';
 import logout from '../../assets/logout.png';
 import edit from '../../assets/edit.png';
@@ -44,14 +45,12 @@ const AdminEmployees = ({ setNavSection, handleLogOut, users }) => {
                           className={styles.action}
                           src={edit}
                           alt="edit"
-                        // onClick={handleLogOut}
                         />
                         <br />
                         <img
                           className={styles.action}
                           src={delete1}
                           alt="delete"
-                        // onClick={handleLogOut}
                         />
                       </td>
                     </tr>

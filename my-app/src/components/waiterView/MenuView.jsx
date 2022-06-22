@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import styles from './WaiterView.module.css';
 import logoSmall from '../../assets/logo-nav_small.png';
 import logout from '../../assets/logout.png';
@@ -7,7 +8,6 @@ import OrdersView from './OrdersView';
 const MenuView = ({ products, orders, setOrders, handleLogOut, saveOrders, status, setStatus, setNavSection }) => {
   const [category, setCategory] = useState('desayuno');
   const [tableValue, setTableValue] = useState(1);
-
 
   const addProductToOrder = (product) => {
     setStatus('waiting');

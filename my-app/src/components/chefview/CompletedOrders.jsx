@@ -1,4 +1,5 @@
 import React from 'react';
+
 import CompletedTable from './CompletedTable';
 
 const CompletedOrders = ({ ordersToView, updateOrderStatus }) => {

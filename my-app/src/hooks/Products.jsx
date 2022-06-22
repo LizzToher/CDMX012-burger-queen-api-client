@@ -5,13 +5,10 @@ let api = helpHttp();
 let url = 'http://localhost:5000/products';
 
 const fetchProducts = (status) => {
-  console.log('parametro que recibe product hook', status);
   const [products, setProducts] = useState(null);
 
   useEffect(() => {
-    console.log('useefect product');
     api.get(url).then((res) => {
-      console.log('respuesta desde products hook', res);
       if (!res.err) {
         setProducts(res);
       } else {
@@ -19,7 +16,6 @@ const fetchProducts = (status) => {
       }
     });
   }, [status]);
-
   return [products];
 };
 

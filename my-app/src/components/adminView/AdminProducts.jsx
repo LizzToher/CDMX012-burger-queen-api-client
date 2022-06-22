@@ -8,8 +8,6 @@ import delete1 from '../../assets/delete1.png';
 import styles from './AdminView.module.css';
 import deleteProduct from '../../hooks/DeleteProduct';
 import fetchProducts from '../../hooks/Products';
-// import onSubmit from '../adminView/productsComponents/EditProduct';
-
 
 const AdminProducts = ({ products, updateStatus, setUpdateStatus, setNavSection, handleLogOut }) => {
 

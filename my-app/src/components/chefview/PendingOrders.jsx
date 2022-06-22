@@ -1,4 +1,5 @@
 import React from 'react';
+
 import CompletedOrders from './CompletedOrders';
 import styles from './ChefView.module.css';
 import logosmall from '../../assets/logo-nav_small.png';
