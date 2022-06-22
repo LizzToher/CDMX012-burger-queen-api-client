@@ -65,3 +65,16 @@ content-type: application/json
       "category": "almuerzo",
       "id": 18
     }
+
+###
+PUT  http://localhost:5000/products/14
+Accept: application/json
+Content-Type: application/json
+If-Match: "pendiente"
+
+ {
+      "product": "sopa de res",
+      "price": "20",
+      "category": "almuerzo",
+      "id": 14
+    } 
