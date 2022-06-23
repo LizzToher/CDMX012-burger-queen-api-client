@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from './WaiterView.module.css';
 
 const OrderTable = ({ orders, incrementClik, decrementClik, removeProductFromOrder, totalAmountCount, tableValue, saveOrders }) => {

@@ -6,7 +6,7 @@ import logoSmall from '../../../assets/logo-nav_small.png';
 import logout from '../../../assets/logout.png';
 import updateProducts from '../../../hooks/UpdateProduct';
 
-const EditProduct = ({ products, setUpdateStatus, updateStatus, setNavSection, handleLogOut }) => {
+const EditProduct = ({ products, setUpdateStatus, updateStatus,  handleLogOut, setNavSection }) => {
   const { id } = useParams();
 
   const [productToUpdate, setProductToUpdate] = useState(null);
@@ -29,20 +29,11 @@ const EditProduct = ({ products, setUpdateStatus, updateStatus, setNavSection, h
     const newProductToUpdate = Object.assign({}, { ...productToUpdate, category: category });
     setProductToUpdate(newProductToUpdate);
   };
-  const setProductId = (id) => {
-    const newProductToUpdate = Object.assign({}, { ...productToUpdate, id: id });
-    setProductToUpdate(newProductToUpdate);
-  };
-  console.log(setProductId);
-
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const editedProduct = [{productToUpdate}];
-    
-    updateProducts(editedProduct[0]);
+    updateProducts(productToUpdate);
     setUpdateStatus(!updateStatus);
-    console.log('producto editado', editedProduct);
   };
 
   if (productToUpdate) {
@@ -72,7 +63,6 @@ const EditProduct = ({ products, setUpdateStatus, updateStatus, setNavSection, h
               <div>
                 <input type='number' className={styles.input} placeholder='Precio' value={productToUpdate.price} onChange={(e) => setProductPrice(e.target.value)} />
               </div>
-
               <select value={productToUpdate.category} onChange={(e) => setProductCategory(e.target.value)}>
                 <option value={'desayuno'}>Desayuno</option>
                 <option value={'almuerzo'}>Almuerzo</option>
@@ -82,13 +72,8 @@ const EditProduct = ({ products, setUpdateStatus, updateStatus, setNavSection, h
                 Editar producto
               </button>
             </form>
-
-
           </>
-
-
         </fieldset>
-
       </div>
     );
   }

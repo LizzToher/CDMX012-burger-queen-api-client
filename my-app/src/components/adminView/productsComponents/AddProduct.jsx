@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-
 import logoSmall from '../../../assets/logo-nav_small.png';
 import logout from '../../../assets/logout.png';
 import styles from '../AdminView.module.css';
 import addProduct from '../../../hooks/SaveProducts';
-
 
 const AddProduct = ({ setNavSection, handleLogOut }) => {
 

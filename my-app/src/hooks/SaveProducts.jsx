@@ -1,8 +1,6 @@
 let url = 'http://localhost:5000/products';
 
 const addProduct = (newProductArray) => {
-  console.log('recibe por parametro addproduct', newProductArray);
-
   fetch(url, {
     method: 'POST',
     body: JSON.stringify(newProductArray),

@@ -8,10 +8,7 @@ const AddEmployee = () => {
     const onSubmitLogin = async ({ email, password }) => { 
         try {
           await createUserWithEmailAndPassword(email, password);
-          console.log('usuario registrado', email, password);
-          console.log('user rol desde login', userRol.doc.rol);
           navigate('/Home');
-    
         } catch (error) {
           switch (error.code) {
             case 'auth/email-already-in-use':
